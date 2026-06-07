@@ -8,9 +8,24 @@ self-improving learning loop. Uses CMC Skill Hub as
 intelligence layer for regime detection, token safety, 
 and signal enrichment.
 
+## System Status — June 6 2026
+- Paper trading: 17 days live
+- Strategies with trade history: 4
+- Total closed trades: 87
+- Learning loop: 14 autonomous proposal mappings
+- Latest build: Stat Arb V2A BTC/ETH lead-lag
+- Next milestone: First live on-chain trade
+  (target June 11-12 via Trust Wallet Agent Kit)
+
 ## Architecture
-- 5 active strategies: Coin Shifter, Micro Momentum,
-  DeFi Rotation V2, Stat Arb V2, LP Strategy
+- 7 strategies built (4 with live paper trading history):
+  - Coin Shifter — active, momentum rotation
+  - Micro Momentum Scanner — active, 32.3% WR
+  - DeFi Rotation V2 — redesigned June 6
+  - Stat Arb V1/V2A — active, BTC/ETH lead-lag
+  - LP Strategy — built, deferred ($5k minimum)
+  - Aave Short — spec complete, Block 6 target
+  - Stat Arb V2B — BNB+Aster, in development
 - Autonomous learning loop: 14 proposal mappings
 - CMC Skill Hub: regime enrichment, safety gates,
   derivatives signals
