@@ -1,63 +1,64 @@
-# Paper Trading Results
+# Paper Trading Results — as of June 6 2026
 
-**Period:** 2026-05-28 → 2026-06-11 (paper mode)
+**Period:** 2026-05-20 → present (paper mode)
 **System:** Command Center v4.25
-**Capital:** ~$47,890 CAD
+**Capital:** $47,587 CAD available ($50,000 CAD starting)
 **Mode:** Fully autonomous paper trading
 
-## Summary (as of 2026-06-07)
+## System Overview
 
 | Metric | Value |
 |---|---|
-| Realized PnL | -$2,109 CAD |
-| Drawdown | 2.9% |
+| Paper trading since | May 20 2026 |
+| Total closed trades | 87 |
+| Realized PnL | -$2,213 CAD |
+| Available capital | $47,587 CAD |
+| Starting capital | $50,000 CAD |
+| Drawdown | 4.4% |
 | Regime | ranging (85% confidence) |
-| Open positions | 2 (AERO/USDC spot + MORPHO yield) |
 | Circuit breakers | All clear |
 
 ## By Strategy
 
-### Coin Shifter v0.1
-- Trades: 3 (too early to assess)
-- Status: Active — AERO/USDC spot + MORPHO yield
-- Notes: Bear defense working — rotated to yield when all tokens negative
+| Strategy | Trades | Win Rate | Total PnL |
+|---|---|---|---|
+| Stat Arb V1 | 14 | 50.0% | $0.00 |
+| Micro Momentum | 31 | 32.3% | -$461 |
+| Coin Shifter | 3 | 0% (early) | -$21 |
+| DeFi Rotation V1 | 39 | 15.4% | -$1,730 |
 
-### Micro Momentum Scanner
-- Win rate: 32.3%
-- Status: Active, scanning 7 pools every 5 minutes
-- Thresholds raised by learning loop (M9/M10)
+## Key Findings
 
-### DeFi Rotation V1 (archived)
-- Win rate: 15.4%
-- Stop-loss rate: 74%
-- Total loss: -$1,730 CAD (78% of all losses)
-- Decision: REDESIGNED → V2
+- **DeFi Rotation V1** responsible for 78% of losses (74% stop-loss rate)
+  → Redesigned June 6 — V2 now live with 6-condition entry gate
+- **Micro Momentum** 32.3% win rate in bear/ranging market — signal quality confirmed
+  → Learning loop raising thresholds (M9/M10)
+- **Stat Arb V1** cross-venue confirmed near-zero alpha — spread closes in seconds, arb bots dominate
+  → V2 BTC/ETH lead-lag built June 6 as replacement signal
+- **System learning loop:** 14 autonomous proposal mappings, first clean proposals generated
 
-### DeFi Rotation V2 (new — June 6 2026)
-- Signal: roc_1h > 0 AND roc_4h > 0 AND volume_surge ≥ 1.5x
-- Exit: +8% TP, -4% trailing stop, 48h time-stop
-- Status: First cycle running
+## Active Improvements (June 6)
 
-### Stat Arb V1 (cross-venue)
-- Net PnL: ~$0 (cross-venue arb near-zero alpha confirmed)
-- Status: Data collection only
+- **DeFi Rotation V2:** tightened entry (6-condition gate: roc_1h > 0, roc_4h > 0, volume_surge ≥ 1.5x, TVL ≥ $1M, vol_24h ≥ $500k, health ≥ 30), wider stops (trailing 4% from peak, +8% TP, 48h time-stop)
+- **Stat Arb V2A:** BTC/ETH lead-lag signal live on Base chain ($1,000/trade, regime-gated — paused in bear/low_vol)
+- **CMC Skill Hub:** Integrated as intelligence layer — 33 skills available for regime enrichment, token safety, short gates
 
-### Stat Arb V2A (lead-lag — June 6 2026)
-- Status: Live, first signal pending
-- Signal: BTC/ETH z-score < -2.0
+## Strategy Status (June 6)
 
-### LP Strategy
-- Status: Deferred ($5k/trade minimum, waiting for capital threshold)
+| Strategy | Status |
+|---|---|
+| Coin Shifter v0.1 | Active — AERO/USDC spot + MORPHO yield |
+| Micro Momentum Scanner | Active — scanning 7 pools every 5 min |
+| DeFi Rotation V2 | Live — first cycle running |
+| Stat Arb V1 | Data collection only |
+| Stat Arb V2A | Live — first signal pending (BTC/ETH z-score < -2.0) |
+| LP Strategy | Deferred ($5k/trade minimum) |
+| Aave Short V1 | Spec complete — build after Stat Arb V2 validated |
 
-## Learning Loop Activity
-- M12: DeFi Rotation stop-loss 3% → 3.3% (manually approved)
-- M9/M10: Micro Momentum accumulating data, no proposals yet
-- M7/M8: Coin Shifter accumulating data
+## Next Milestone
 
-## Regime History
-- 2026-05-28 → 2026-06-03: bear_trending
-- 2026-06-03 13:03 UTC: Flip to ranging (85% confidence)
-- 2026-06-07: ranging (85% confidence), stable
+- First live on-chain trade: target June 11–12 (end of paper period)
+- Live PnL results will be posted here
 
 ---
-*Results updated daily. Live trading begins June 11 after paper period completion.*
+*Updated: June 6 2026. Live trading begins after paper period and explicit Phase 5 approval.*
