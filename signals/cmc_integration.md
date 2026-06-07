@@ -2,20 +2,22 @@
 
 ## Live Integration Status
 
-### Regime Classifier Enrichment — LIVE
-- Skills: detect_market_regime + btc_cross_asset_correlation
-- Frequency: hourly (rate-limited)
+### Regime Classifier Enrichment — LIVE ✅
+- Skills used: CMC REST API
+  - /v1/global-metrics/quotes/latest
+  - /v1/cryptocurrency/quotes/latest
+- Frequency: hourly (55-min rate limit)
 - Effect: ±10% confidence modifier
 - Fallback: price-based classifier unchanged
-- Logged to: system_events + raw_signals
 
-Current signal (June 6 2026):
-- CMC regime: independent_pricing
-- BTC-Nasdaq correlation: 0.2791 (weakening)
-- BTC-Gold correlation: 0.5228 (strengthening)
-- DXY regime: liquidity_tightening
-- ETF flows: sustained_outflows (-$4.58B/30d)
-- Action: respect_flow_headwind
+Live result (June 7 2026 04:31 UTC):
+- Price classifier: ranging (85% confidence)
+- CMC signal: bear_trending
+  (BTC dominance 58.3%, BTC -17% 7d)
+- Final regime: ranging (75% confidence)
+- Enrichment: "CMC diverges: bear_trending vs price: ranging"
+- Interpretation: short-term bounce masking weekly bear
+  trend — system correctly cautious about ranging strategies
 
 ### Token Safety Gate — PLANNED
 - Skill: verify_new_token_safety
