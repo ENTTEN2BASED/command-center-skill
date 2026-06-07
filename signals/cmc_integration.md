@@ -1,5 +1,34 @@
 # CMC Skill Hub Integration
 
+## Live Integration Status
+
+### Regime Classifier Enrichment — LIVE
+- Skills: detect_market_regime + btc_cross_asset_correlation
+- Frequency: hourly (rate-limited)
+- Effect: ±10% confidence modifier
+- Fallback: price-based classifier unchanged
+- Logged to: system_events + raw_signals
+
+Current signal (June 6 2026):
+- CMC regime: independent_pricing
+- BTC-Nasdaq correlation: 0.2791 (weakening)
+- BTC-Gold correlation: 0.5228 (strengthening)
+- DXY regime: liquidity_tightening
+- ETF flows: sustained_outflows (-$4.58B/30d)
+- Action: respect_flow_headwind
+
+### Token Safety Gate — PLANNED
+- Skill: verify_new_token_safety
+- Trigger: every new Token Scout discovery
+- Effect: blocks honeypot/rug tokens
+- Status: building next
+
+### Derivatives Signal — PLANNED
+- Skill: detect_funding_rate_regime_shift
+- Trigger: Aave Short evaluation cycle
+- Effect: short_safe gate enrichment
+- Status: building after token safety
+
 ## Overview
 CMC Skill Hub provides 33 pre-built intelligence skills accessible via MCP 
 (Model Context Protocol). The Command Center uses these as a composable 
