@@ -61,4 +61,34 @@
 - Live PnL results will be posted here
 
 ---
-*Updated: June 6 2026. Live trading begins after paper period and explicit Phase 5 approval.*
+
+## June 7 2026 — Build Session
+
+### Shipped today:
+- CMC Skill Hub integrated (REST API)
+  - Regime enrichment: LIVE
+    - Current signal: ranging 75%
+      (CMC diverges: bear_trending)
+    - BTC dominance 58.3%, -17% 7d
+  - Token safety gate: LIVE
+    - Blocks honeypots before watchlist entry
+- DeFi Rotation V2: redesigned and live
+  - New entry: 6-condition gate
+  - New exit: 8% take-profit, 4% trailing stop
+- Stat Arb V2A: BTC/ETH lead-lag live
+  - $1,000/trade, regime-gated
+  - Waiting for z < -2.0 signal
+- BNB Chain: 5 pools added to watchlist
+  - CAKE, ASTER, TWT, FLOKI, BONK
+  - Chain-isolated from Base strategies
+- Multi-chain architecture confirmed:
+  - BASE badge (blue) on Base positions
+  - BNB badge (gold) on BNB positions
+  - Scales to any future chain
+
+### Next milestone:
+- Trust Wallet Agent Kit install
+- First live on-chain trade (target June 9-11)
+
+---
+*Updated: June 7 2026. Live trading begins after paper period and explicit Phase 5 approval.*
