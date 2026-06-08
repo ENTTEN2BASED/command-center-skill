@@ -81,7 +81,16 @@ tx = wallet.swap(
 )
 ```
 
+## TWAK Execution Layer — LIVE (June 8)
+- Trust Wallet Agent Kit REST API operational
+- FISHERMAN agent wallet: 0x654d641bD9de12Be2E694673bBD17D04e1e4C1A6
+- 60 actions: swaps, transfers, automations, x402 payments, ERC-8004 identity
+- Block 6 execution path confirmed
+- Next: erc8004_register + competition_register + first live trade
+
 ## Status
+- TWAK REST API: LIVE (June 8)
+- FISHERMAN wallet: OPERATIONAL
 - ERC-8004 registration: PENDING (June 9–14 build window)
 - BSC Testnet: Not yet deployed
 - Aster perp integration: Spec complete, build June 9–14
