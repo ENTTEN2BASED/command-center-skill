@@ -88,9 +88,32 @@ tx = wallet.swap(
 - Block 6 execution path confirmed
 - Next: erc8004_register + competition_register + first live trade
 
+## ERC-8004 Registration — COMPLETE ✅
+
+Agent ID: 130119
+Owner: 0x654d641bD9de12Be2E694673bBD17D04e1e4C1A6
+Chain: BSC testnet
+Transactions: 5 (all gasless)
+- erc8004_register: 0x24b7db1d189452e756415a16ff25d3cc59f500a5f0b2e1a4151a605cec068946
+- erc8004_set_uri: 0x7dcd29bcd4f42478dd0ab432746b3700d51bd86a34b440e294515762fe57b1fa
+- set_metadata name (FISHERMAN): 0xa5bc3523fdeec25171e4a25ad1251357fddfd55f51df53d275bc5f5c8ce96b50
+- set_metadata description: 0xc31afbd918ee44607483863f8894e4788cca83c19cbc7f4ef3ef5101341de1ad
+- set_metadata capabilities: 0x7c58d41f8fac381ef481aee06979b3cc2bc7b37cab12943564007de801cc0e3c
+
+Capabilities on-chain:
+swap, yield, stat_arb, momentum
+
+Agent manifest:
+https://raw.githubusercontent.com/ENTTEN2BASED/command-center-dashboard/main/public/fisherman-agent.json
+
+competition_register: PENDING
+Requires ~0.0037 BNB gas on BSC mainnet.
+Fund 0x654d641bD9de12Be2E694673bBD17D04e1e4C1A6 then run competition_register action.
+Registration window open until 2026-06-25.
+
 ## Status
 - TWAK REST API: LIVE (June 8)
 - FISHERMAN wallet: OPERATIONAL
-- ERC-8004 registration: PENDING (June 9–14 build window)
-- BSC Testnet: Not yet deployed
+- ERC-8004 registration: COMPLETE ✅ — Agent ID 130119, BSC testnet (commit 4954bff)
+- competition_register: PENDING — needs ~$2 BNB gas on mainnet
 - Aster perp integration: Spec complete, build June 9–14
