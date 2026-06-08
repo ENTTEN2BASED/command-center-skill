@@ -8,14 +8,12 @@ self-improving learning loop. Uses CMC Skill Hub as
 intelligence layer for regime detection, token safety, 
 and signal enrichment.
 
-## System Status — June 6 2026
-- Paper trading: 17 days live
+## System Status — June 8 2026
+- Paper trading: 11 days live
 - Strategies with trade history: 4
-- Total closed trades: 87
 - Learning loop: 14 autonomous proposal mappings
-- Latest build: Stat Arb V2A BTC/ETH lead-lag
-- Next milestone: First live on-chain trade
-  (target June 11-12 via Trust Wallet Agent Kit)
+- Latest build: Block 6 live execution layer (TWAK REST client, dual-record pattern)
+- Next milestone: First live on-chain trade (after activation prereqs met)
 
 ## Architecture
 - 7 strategies built (4 with live paper trading history):
@@ -31,6 +29,14 @@ and signal enrichment.
   derivatives signals
 - Execution: Trust Wallet Agent Kit (Base + BNB Chain)
 - Chain: Base (primary), BNB Chain (Stat Arb V2B)
+
+## Live Execution Layer (Block 6)
+- **Status:** BUILT June 8 2026, not yet activated
+- Trust Wallet Agent Kit REST API (`src/lib/execution/twak-client.ts`)
+- Dual-record pattern: paper position written first, then live swap executed — audit trail preserved regardless of swap outcome
+- Kill switch: $500 max per trade, 2% max price impact, 1% max slippage
+- Fallback: TWAK unavailable → paper only, system_event logged
+- Activation: `UPDATE settings SET execution_mode = 'Live'` after all prerequisites met (funded wallet, TWAK running in WSL, 7+ days positive paper trend, no critical bugs 72h)
 
 ## CMC Skill Hub Integration
 - detect_market_regime → regime classifier enrichment
