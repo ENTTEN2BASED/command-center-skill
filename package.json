@@ -1,0 +1,18 @@
+{
+  "name": "command-center-skill",
+  "version": "1.0.0",
+  "description": "DeFi strategy skill framework — regime classification, momentum scoring, stat arb. BNB × CMC × Trust Wallet hackathon submission.",
+  "type": "module",
+  "scripts": {
+    "example": "npx tsx examples/run-backtest.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.2",
+    "tsx": "^4.7.0",
+    "typescript": "^5.4.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
