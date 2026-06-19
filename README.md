@@ -1,52 +1,58 @@
-# Command Center — Autonomous DeFi Trading System
-## BNB Chain × CoinMarketCap × Trust Wallet Hackathon
-### Track 2: Strategy Skills
+# Command Center — Market-Neutral Stat-Arb Strategy Skill
+## BNB Chain × CoinMarketCap × Trust Wallet Hackathon — Track 2: Strategy Skills
 
-## Overview
-Autonomous multi-strategy DeFi trading system with 
-self-improving learning loop. Uses CMC Skill Hub as 
-intelligence layer for regime detection, token safety, 
-and signal enrichment.
+## What this is
+A market-neutral statistical-arbitrage Strategy Skill (BTC/ETH lead-lag), validated on a real paper track record, with CoinMarketCap's market-regime signal wired directly into the entry decision. The thesis is capital preservation through a bear/ranging tape, not raw return — and a genuine, decision-path use of CMC data (not advisory dashboards).
 
-## System Status — June 8 2026
-- Paper trading: 11 days live
-- Strategies with trade history: 4
-- Learning loop: 14 autonomous proposal mappings
-- Latest build: Block 6 live execution layer (TWAK REST client, dual-record pattern)
-- Next milestone: First live on-chain trade (after activation prereqs met)
+## Headline — risk control first
+- Market-neutral, extremely low drawdown. Live paper stat-arb: 194 measured trades, max drawdown $46.25 = 0.09% of capital across a bear/ranging market.
+- Near-breakeven by design. +$36.16 total PnL, mean +0.039%/trade, 49.5% win rate, per-trade Sharpe 0.05 — a capital-preservation engine, not a return engine.
+- CMC regime signal in the decision path. On CMC bear_trending (risk-off), new entries pause; exits always run. In a crash-window backtest this cut both total loss and max drawdown by ~30%.
 
-## Architecture
-- 7 strategies built (4 with live paper trading history):
-  - Coin Shifter — active, momentum rotation
-  - Micro Momentum Scanner — active, 32.3% WR
-  - DeFi Rotation V2 — redesigned June 6
-  - Stat Arb V1/V2A — active, BTC/ETH lead-lag
-  - LP Strategy — built, deferred ($5k minimum)
-  - Aave Short — spec complete, Block 6 target
-  - Stat Arb V2B — BNB+Aster, in development
-- Autonomous learning loop: 14 proposal mappings
-- CMC Skill Hub: regime enrichment, safety gates,
-  derivatives signals
-- Execution: Trust Wallet Agent Kit (Base + BNB Chain)
-- Chain: Base (primary), BNB Chain (Stat Arb V2B)
+## Live paper track record — Stat Arb (measured, full period)
+Source: paper_positions (status = Closed), measured-only — pricing-fallback "unmeasured" closes are excluded from every metric. Generated 2026-06-19.
 
-## Live Execution Layer (Block 6)
-- **Status:** BUILT June 8 2026, not yet activated
-- Trust Wallet Agent Kit REST API (`src/lib/execution/twak-client.ts`)
-- Dual-record pattern: paper position written first, then live swap executed — audit trail preserved regardless of swap outcome
-- Kill switch: $500 max per trade, 2% max price impact, 1% max slippage
-- Fallback: TWAK unavailable → paper only, system_event logged
-- Activation: `UPDATE settings SET execution_mode = 'Live'` after all prerequisites met (funded wallet, TWAK running in WSL, 7+ days positive paper trend, no critical bugs 72h)
+| Metric | Value |
+|---|---|
+| Measured trades | 194 |
+| Win rate | 49.5% (96W / 98L) |
+| Total PnL (CAD, gross) | +$36.16 |
+| Mean return / trade | +0.039% |
+| Per-trade Sharpe (NOT annualized) | 0.05 |
+| Max drawdown | $46.25 = 0.09% of starting capital |
 
-## CMC Skill Hub Integration
-- detect_market_regime → regime classifier enrichment
-- verify_new_token_safety → token scout safety gate
-- detect_funding_rate_regime_shift → Aave Short gate
-- altcoin_breakout_scanner_spot → momentum pre-filter
+Read as: near-breakeven, market-neutral, sub-0.1% drawdown through a bear/ranging market. Full detail + equity curve in results/stat-arb-metrics.md.
 
-## Results
-[Paper trading results — updated daily]
-[Live trading results — from June 11]
+## CMC regime risk-off gate — the centerpiece
+CMC's market-regime signal is promoted from advisory to a real entry gate on the stat-arb strategy: when CMC reads bear_trending (risk-off), new entries pause; exits always run (entry-only gate). Crash-window backtest below.
 
-## Strategy Specs
-See /strategies/ for full backtestable specifications.
+### Crash-window backtest (May 26 – Jun 10, BTC ~ -19%), V2A long-only
+| Metric | gate OFF | gate ON | Effect |
+|---|---|---|---|
+| Trades | 60 | 42 | 18 long entries paused (incl. the single largest loss, -$42) |
+| Total PnL | -$206.45 | -$145.13 | loss cut ~30% |
+| Max drawdown | -$207.79 (0.42% cap) | -$146.47 (0.29% cap) | ~30% less |
+| Per-trade Sharpe | -0.30 | -0.51 | slightly worse (gate cuts exposure, not per-trade quality) |
+
+Honest framing:
+- This is loss reduction, not profit — a long-only strategy loses in a crash; the gate reduces the damage.
+- The 49.5% win rate is full-period live performance; the crash-window backtest is a deliberate worst-case stress test. Distinct contexts — not a contradiction.
+- The backtest's CMC history is reconstructed from real BTC 7-day trend using the live signal's exact thresholds, because CMC historical data is paywalled (see results/stat-arb-gate-comparison.md).
+- V1 cross-venue results are tiny/snapshot-based — relegated, not headlined.
+- V2B perp is out of replay scope but shares the identical risk-off signal.
+
+## What CMC actually does here (four real roles)
+1. Regime risk-off entry gate — bear_trending pauses new stat-arb entries (the decision-path use above).
+2. Live token-safety gating — CMC token-safety (honeypot, security score, LP-lock, holder-count signals) runs in two scheduled jobs: Token Scout drops unsafe new-token candidates at discovery, and a daily safety sweep auto-blacklists unsafe active pools. Fails open on unknown.
+3. Regime confidence modifier — CMC macro/derivatives signal adjusts the price-based regime classifier's confidence.
+4. Performance benchmark — CMC regime read used as an external check on the system's own classification.
+
+The autonomous learning loop (M7/M8/M13/M14) runs on pool/trade data, not CMC.
+
+## Sponsor stacks
+- CoinMarketCap — regime signal, live token-safety gating, and the risk-off entry gate.
+- Trust Wallet Agent Kit (TWAK) — self-custody signing / on-chain execution.
+- BNB Chain / Aster — perp venue for the delta-neutral V2B variant.
+
+## Strategy spec
+Deterministic, backtestable rules in strategies/stat_arb_v2.md. Measured track record in results/stat-arb-metrics.md; gate comparison in results/stat-arb-gate-comparison.md.

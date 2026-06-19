@@ -19,11 +19,14 @@ Live result (June 7 2026 04:31 UTC):
 - Interpretation: short-term bounce masking weekly bear
   trend — system correctly cautious about ranging strategies
 
-### Token Safety Gate — PLANNED
-- Skill: verify_new_token_safety
-- Trigger: every new Token Scout discovery
-- Effect: blocks honeypot/rug tokens
-- Status: building next
+### Token Safety Gate — LIVE ✅
+- Skill: verify_new_token_safety (CMC token-safety: honeypot,
+  security score, LP-lock, holder-count signals)
+- Runs live in two scheduled jobs:
+  1. Token Scout (weekly) — drops unsafe new-token candidates
+     at discovery, before they enter the watchlist
+  2. Daily safety sweep — auto-blacklists unsafe active pools
+- Fail-open: unknown safety state does not block (fails open)
 
 ### Derivatives Signal — PLANNED
 - Skill: detect_funding_rate_regime_shift
@@ -135,8 +138,12 @@ Scheduler (every 30min)
                     └── assess_macro_liquidity_risk_regime
 
 Token Scout (weekly Sunday)
-    └── verify_new_token_safety (CMC)
+    └── verify_new_token_safety (CMC) — drop unsafe new-token candidates at discovery
     └── detect_token_liquidity_decay (CMC)
+
+Daily safety sweep (daily)
+    └── verify_new_token_safety (CMC) — auto-blacklist unsafe active pools
+        (fails open on unknown)
 
 Aave Short (on-demand)
     └── short_safe gate

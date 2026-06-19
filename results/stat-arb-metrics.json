@@ -1,0 +1,1792 @@
+{
+  "generated_at": "2026-06-19T03:55:22.113Z",
+  "source": "paper_positions (status=Closed, measured-only)",
+  "strategies_included": [
+    "Stat Arb",
+    "Stat Arb V2B"
+  ],
+  "total_rows_fetched": 244,
+  "measured_rows": 216,
+  "unmeasured_excluded": 28,
+  "starting_capital": 50000,
+  "sharpe_definition": "per-trade: mean(return_pct) / sample_stddev(return_pct); NOT annualized",
+  "drawdown_note": "Drawdown is reported as max_drawdown_abs and max_drawdown_pct_capital; percent-of-PnL-peak is omitted as degenerate for a market-neutral strategy whose cumulative-PnL peak sits near $0.",
+  "metrics": [
+    {
+      "label": "Stat Arb",
+      "measured_trades": 194,
+      "total_net_pnl": 36.16,
+      "mean_return_pct": 0.0393,
+      "win_rate_pct": 49.5,
+      "wins": 96,
+      "losses": 98,
+      "sharpe_per_trade": 0.0502,
+      "return_pct_stddev": 0.7829,
+      "max_drawdown_abs": 46.25,
+      "max_drawdown_pct_capital": 0.0925,
+      "peak_at_max_drawdown": 5.77,
+      "equity_curve": [
+        {
+          "closed_at": "2026-06-04T05:02:02.893+00:00",
+          "cumulative_pnl": 1.08
+        },
+        {
+          "closed_at": "2026-06-04T05:02:02.893+00:00",
+          "cumulative_pnl": 0
+        },
+        {
+          "closed_at": "2026-06-04T05:32:02.491+00:00",
+          "cumulative_pnl": 1.98
+        },
+        {
+          "closed_at": "2026-06-04T05:32:02.491+00:00",
+          "cumulative_pnl": 0
+        },
+        {
+          "closed_at": "2026-06-04T16:17:03.073+00:00",
+          "cumulative_pnl": -1.92
+        },
+        {
+          "closed_at": "2026-06-04T16:17:03.073+00:00",
+          "cumulative_pnl": 0
+        },
+        {
+          "closed_at": "2026-06-04T17:02:02.771+00:00",
+          "cumulative_pnl": -0.57
+        },
+        {
+          "closed_at": "2026-06-04T17:02:02.771+00:00",
+          "cumulative_pnl": 0
+        },
+        {
+          "closed_at": "2026-06-05T01:47:05.013+00:00",
+          "cumulative_pnl": 0.67
+        },
+        {
+          "closed_at": "2026-06-05T01:47:05.013+00:00",
+          "cumulative_pnl": 0
+        },
+        {
+          "closed_at": "2026-06-05T10:32:03.27+00:00",
+          "cumulative_pnl": -0.47
+        },
+        {
+          "closed_at": "2026-06-05T10:32:03.27+00:00",
+          "cumulative_pnl": 0
+        },
+        {
+          "closed_at": "2026-06-05T12:02:04.805+00:00",
+          "cumulative_pnl": 0.29
+        },
+        {
+          "closed_at": "2026-06-05T12:02:04.805+00:00",
+          "cumulative_pnl": 0
+        },
+        {
+          "closed_at": "2026-06-07T03:17:05.263+00:00",
+          "cumulative_pnl": 3.46
+        },
+        {
+          "closed_at": "2026-06-07T03:17:05.263+00:00",
+          "cumulative_pnl": 0.3
+        },
+        {
+          "closed_at": "2026-06-07T09:17:08.513+00:00",
+          "cumulative_pnl": 0.23
+        },
+        {
+          "closed_at": "2026-06-07T09:17:08.513+00:00",
+          "cumulative_pnl": 0.94
+        },
+        {
+          "closed_at": "2026-06-07T10:32:03.47+00:00",
+          "cumulative_pnl": 2.61
+        },
+        {
+          "closed_at": "2026-06-07T10:32:03.47+00:00",
+          "cumulative_pnl": 2.31
+        },
+        {
+          "closed_at": "2026-06-07T12:17:03.982+00:00",
+          "cumulative_pnl": 4.49
+        },
+        {
+          "closed_at": "2026-06-07T12:17:03.982+00:00",
+          "cumulative_pnl": 2.85
+        },
+        {
+          "closed_at": "2026-06-07T12:32:05.211+00:00",
+          "cumulative_pnl": 2.19
+        },
+        {
+          "closed_at": "2026-06-07T12:32:05.211+00:00",
+          "cumulative_pnl": 2.88
+        },
+        {
+          "closed_at": "2026-06-07T21:47:03.843+00:00",
+          "cumulative_pnl": 2.24
+        },
+        {
+          "closed_at": "2026-06-07T21:47:03.843+00:00",
+          "cumulative_pnl": 3.34
+        },
+        {
+          "closed_at": "2026-06-08T01:02:03.307+00:00",
+          "cumulative_pnl": 3.26
+        },
+        {
+          "closed_at": "2026-06-08T01:02:03.307+00:00",
+          "cumulative_pnl": 3.09
+        },
+        {
+          "closed_at": "2026-06-08T02:17:05.318+00:00",
+          "cumulative_pnl": 3.59
+        },
+        {
+          "closed_at": "2026-06-08T02:17:05.318+00:00",
+          "cumulative_pnl": 3.71
+        },
+        {
+          "closed_at": "2026-06-08T11:32:05.301+00:00",
+          "cumulative_pnl": 2.6
+        },
+        {
+          "closed_at": "2026-06-08T11:32:05.301+00:00",
+          "cumulative_pnl": 4.08
+        },
+        {
+          "closed_at": "2026-06-08T13:32:05.675+00:00",
+          "cumulative_pnl": 2.64
+        },
+        {
+          "closed_at": "2026-06-08T13:32:05.675+00:00",
+          "cumulative_pnl": 4.51
+        },
+        {
+          "closed_at": "2026-06-08T15:02:05.181+00:00",
+          "cumulative_pnl": 5.77
+        },
+        {
+          "closed_at": "2026-06-08T15:02:05.181+00:00",
+          "cumulative_pnl": 4.91
+        },
+        {
+          "closed_at": "2026-06-08T15:17:03.79+00:00",
+          "cumulative_pnl": 3.49
+        },
+        {
+          "closed_at": "2026-06-08T15:17:03.79+00:00",
+          "cumulative_pnl": 4.86
+        },
+        {
+          "closed_at": "2026-06-08T15:47:06.423+00:00",
+          "cumulative_pnl": 4.78
+        },
+        {
+          "closed_at": "2026-06-08T15:47:06.423+00:00",
+          "cumulative_pnl": 5.26
+        },
+        {
+          "closed_at": "2026-06-09T00:47:03.311+00:00",
+          "cumulative_pnl": -17.73
+        },
+        {
+          "closed_at": "2026-06-09T02:17:05.879+00:00",
+          "cumulative_pnl": -16.76
+        },
+        {
+          "closed_at": "2026-06-09T02:17:05.879+00:00",
+          "cumulative_pnl": -17.63
+        },
+        {
+          "closed_at": "2026-06-09T02:32:05.461+00:00",
+          "cumulative_pnl": -20.02
+        },
+        {
+          "closed_at": "2026-06-09T02:32:05.461+00:00",
+          "cumulative_pnl": -16.97
+        },
+        {
+          "closed_at": "2026-06-09T12:02:04.953+00:00",
+          "cumulative_pnl": -26.43
+        },
+        {
+          "closed_at": "2026-06-09T21:47:04.882+00:00",
+          "cumulative_pnl": -26.29
+        },
+        {
+          "closed_at": "2026-06-09T21:47:04.882+00:00",
+          "cumulative_pnl": -25.8
+        },
+        {
+          "closed_at": "2026-06-10T00:32:05.496+00:00",
+          "cumulative_pnl": -25.34
+        },
+        {
+          "closed_at": "2026-06-10T00:32:05.496+00:00",
+          "cumulative_pnl": -25.53
+        },
+        {
+          "closed_at": "2026-06-10T01:47:04.942+00:00",
+          "cumulative_pnl": -24.18
+        },
+        {
+          "closed_at": "2026-06-10T01:47:04.942+00:00",
+          "cumulative_pnl": -24.07
+        },
+        {
+          "closed_at": "2026-06-10T06:17:04.02+00:00",
+          "cumulative_pnl": -23.97
+        },
+        {
+          "closed_at": "2026-06-10T06:17:04.02+00:00",
+          "cumulative_pnl": -23.07
+        },
+        {
+          "closed_at": "2026-06-10T07:08:13.415+00:00",
+          "cumulative_pnl": -22.24
+        },
+        {
+          "closed_at": "2026-06-10T07:08:13.415+00:00",
+          "cumulative_pnl": -22.43
+        },
+        {
+          "closed_at": "2026-06-10T17:49:11.262+00:00",
+          "cumulative_pnl": -22.61
+        },
+        {
+          "closed_at": "2026-06-10T17:49:11.262+00:00",
+          "cumulative_pnl": -22.61
+        },
+        {
+          "closed_at": "2026-06-10T17:52:17.009+00:00",
+          "cumulative_pnl": -27.24
+        },
+        {
+          "closed_at": "2026-06-10T22:34:07.199+00:00",
+          "cumulative_pnl": -27.73
+        },
+        {
+          "closed_at": "2026-06-10T22:34:07.199+00:00",
+          "cumulative_pnl": -26.47
+        },
+        {
+          "closed_at": "2026-06-11T20:34:06.725+00:00",
+          "cumulative_pnl": -36.73
+        },
+        {
+          "closed_at": "2026-06-12T01:32:03.492+00:00",
+          "cumulative_pnl": -40.48
+        },
+        {
+          "closed_at": "2026-06-12T01:32:03.492+00:00",
+          "cumulative_pnl": -37.6
+        },
+        {
+          "closed_at": "2026-06-12T07:18:06.95+00:00",
+          "cumulative_pnl": -38.1
+        },
+        {
+          "closed_at": "2026-06-12T07:18:06.95+00:00",
+          "cumulative_pnl": -37.44
+        },
+        {
+          "closed_at": "2026-06-12T14:47:03.962+00:00",
+          "cumulative_pnl": -38.75
+        },
+        {
+          "closed_at": "2026-06-12T14:47:03.962+00:00",
+          "cumulative_pnl": -38.28
+        },
+        {
+          "closed_at": "2026-06-12T15:17:02.986+00:00",
+          "cumulative_pnl": -30.33
+        },
+        {
+          "closed_at": "2026-06-12T15:19:07.251+00:00",
+          "cumulative_pnl": -32.79
+        },
+        {
+          "closed_at": "2026-06-12T15:19:07.251+00:00",
+          "cumulative_pnl": -32.63
+        },
+        {
+          "closed_at": "2026-06-12T15:47:05.691+00:00",
+          "cumulative_pnl": -32.49
+        },
+        {
+          "closed_at": "2026-06-12T15:47:05.691+00:00",
+          "cumulative_pnl": -32.62
+        },
+        {
+          "closed_at": "2026-06-13T02:36:10.475+00:00",
+          "cumulative_pnl": -32.83
+        },
+        {
+          "closed_at": "2026-06-13T02:36:10.475+00:00",
+          "cumulative_pnl": -32.57
+        },
+        {
+          "closed_at": "2026-06-13T04:17:03.332+00:00",
+          "cumulative_pnl": -32.56
+        },
+        {
+          "closed_at": "2026-06-13T04:17:03.332+00:00",
+          "cumulative_pnl": -32.52
+        },
+        {
+          "closed_at": "2026-06-13T04:38:11.017+00:00",
+          "cumulative_pnl": -31.99
+        },
+        {
+          "closed_at": "2026-06-13T04:38:11.017+00:00",
+          "cumulative_pnl": -32.1
+        },
+        {
+          "closed_at": "2026-06-13T07:06:11.587+00:00",
+          "cumulative_pnl": -32.18
+        },
+        {
+          "closed_at": "2026-06-13T07:06:11.587+00:00",
+          "cumulative_pnl": -32.02
+        },
+        {
+          "closed_at": "2026-06-13T07:47:03.762+00:00",
+          "cumulative_pnl": -31.99
+        },
+        {
+          "closed_at": "2026-06-13T07:47:03.762+00:00",
+          "cumulative_pnl": -32.01
+        },
+        {
+          "closed_at": "2026-06-13T08:36:08.41+00:00",
+          "cumulative_pnl": -32.52
+        },
+        {
+          "closed_at": "2026-06-13T08:36:08.41+00:00",
+          "cumulative_pnl": -31.76
+        },
+        {
+          "closed_at": "2026-06-13T10:20:08.736+00:00",
+          "cumulative_pnl": -31.21
+        },
+        {
+          "closed_at": "2026-06-13T10:20:08.736+00:00",
+          "cumulative_pnl": -31.3
+        },
+        {
+          "closed_at": "2026-06-13T12:04:08.06+00:00",
+          "cumulative_pnl": -31.28
+        },
+        {
+          "closed_at": "2026-06-13T12:04:08.06+00:00",
+          "cumulative_pnl": -31.65
+        },
+        {
+          "closed_at": "2026-06-13T16:23:11.588+00:00",
+          "cumulative_pnl": -32.28
+        },
+        {
+          "closed_at": "2026-06-13T16:23:11.588+00:00",
+          "cumulative_pnl": -31.56
+        },
+        {
+          "closed_at": "2026-06-13T16:49:06.672+00:00",
+          "cumulative_pnl": -31.27
+        },
+        {
+          "closed_at": "2026-06-13T16:49:06.672+00:00",
+          "cumulative_pnl": -31.62
+        },
+        {
+          "closed_at": "2026-06-13T19:48:06.521+00:00",
+          "cumulative_pnl": -31.94
+        },
+        {
+          "closed_at": "2026-06-13T19:48:06.521+00:00",
+          "cumulative_pnl": -31.75
+        },
+        {
+          "closed_at": "2026-06-13T22:32:03.232+00:00",
+          "cumulative_pnl": -31.68
+        },
+        {
+          "closed_at": "2026-06-13T22:32:03.232+00:00",
+          "cumulative_pnl": -32.33
+        },
+        {
+          "closed_at": "2026-06-13T22:34:09.012+00:00",
+          "cumulative_pnl": -33.14
+        },
+        {
+          "closed_at": "2026-06-13T22:34:09.012+00:00",
+          "cumulative_pnl": -33.16
+        },
+        {
+          "closed_at": "2026-06-14T01:33:09.607+00:00",
+          "cumulative_pnl": -33.62
+        },
+        {
+          "closed_at": "2026-06-14T01:33:09.607+00:00",
+          "cumulative_pnl": -32.7
+        },
+        {
+          "closed_at": "2026-06-14T01:48:06.611+00:00",
+          "cumulative_pnl": -32.61
+        },
+        {
+          "closed_at": "2026-06-14T01:48:06.611+00:00",
+          "cumulative_pnl": -32.33
+        },
+        {
+          "closed_at": "2026-06-14T02:04:10.344+00:00",
+          "cumulative_pnl": -32.36
+        },
+        {
+          "closed_at": "2026-06-14T02:04:10.344+00:00",
+          "cumulative_pnl": -32.11
+        },
+        {
+          "closed_at": "2026-06-14T09:32:03.631+00:00",
+          "cumulative_pnl": -31.29
+        },
+        {
+          "closed_at": "2026-06-14T09:32:03.631+00:00",
+          "cumulative_pnl": -31.17
+        },
+        {
+          "closed_at": "2026-06-14T10:34:06.372+00:00",
+          "cumulative_pnl": -30.87
+        },
+        {
+          "closed_at": "2026-06-14T10:34:06.372+00:00",
+          "cumulative_pnl": -30.82
+        },
+        {
+          "closed_at": "2026-06-14T16:49:07.114+00:00",
+          "cumulative_pnl": -29.9
+        },
+        {
+          "closed_at": "2026-06-14T16:49:07.114+00:00",
+          "cumulative_pnl": -31.14
+        },
+        {
+          "closed_at": "2026-06-14T16:51:09.898+00:00",
+          "cumulative_pnl": -30.87
+        },
+        {
+          "closed_at": "2026-06-14T16:51:09.898+00:00",
+          "cumulative_pnl": -31.19
+        },
+        {
+          "closed_at": "2026-06-14T17:17:05.472+00:00",
+          "cumulative_pnl": -30.92
+        },
+        {
+          "closed_at": "2026-06-14T17:17:05.472+00:00",
+          "cumulative_pnl": -31.25
+        },
+        {
+          "closed_at": "2026-06-14T21:32:04.652+00:00",
+          "cumulative_pnl": -34.96
+        },
+        {
+          "closed_at": "2026-06-14T21:32:04.652+00:00",
+          "cumulative_pnl": -31.28
+        },
+        {
+          "closed_at": "2026-06-15T01:04:08.313+00:00",
+          "cumulative_pnl": -18.5
+        },
+        {
+          "closed_at": "2026-06-15T03:18:04.945+00:00",
+          "cumulative_pnl": -18.03
+        },
+        {
+          "closed_at": "2026-06-15T03:18:04.945+00:00",
+          "cumulative_pnl": -18.11
+        },
+        {
+          "closed_at": "2026-06-15T03:34:05.015+00:00",
+          "cumulative_pnl": -17.81
+        },
+        {
+          "closed_at": "2026-06-15T03:34:05.015+00:00",
+          "cumulative_pnl": -17.61
+        },
+        {
+          "closed_at": "2026-06-15T04:36:09.096+00:00",
+          "cumulative_pnl": -17.88
+        },
+        {
+          "closed_at": "2026-06-15T04:36:09.096+00:00",
+          "cumulative_pnl": -17.39
+        },
+        {
+          "closed_at": "2026-06-15T11:18:07.777+00:00",
+          "cumulative_pnl": -15.47
+        },
+        {
+          "closed_at": "2026-06-15T11:18:07.777+00:00",
+          "cumulative_pnl": -17.37
+        },
+        {
+          "closed_at": "2026-06-15T11:37:10.955+00:00",
+          "cumulative_pnl": -22.16
+        },
+        {
+          "closed_at": "2026-06-15T11:37:10.955+00:00",
+          "cumulative_pnl": -19.01
+        },
+        {
+          "closed_at": "2026-06-15T15:47:06.764+00:00",
+          "cumulative_pnl": -22.61
+        },
+        {
+          "closed_at": "2026-06-15T15:47:06.764+00:00",
+          "cumulative_pnl": -18.63
+        },
+        {
+          "closed_at": "2026-06-15T16:18:06.997+00:00",
+          "cumulative_pnl": -19.48
+        },
+        {
+          "closed_at": "2026-06-15T16:18:06.997+00:00",
+          "cumulative_pnl": -19.51
+        },
+        {
+          "closed_at": "2026-06-15T16:34:10.316+00:00",
+          "cumulative_pnl": -19.68
+        },
+        {
+          "closed_at": "2026-06-15T16:34:10.316+00:00",
+          "cumulative_pnl": -19.43
+        },
+        {
+          "closed_at": "2026-06-15T18:32:04.823+00:00",
+          "cumulative_pnl": -19.72
+        },
+        {
+          "closed_at": "2026-06-15T18:32:04.823+00:00",
+          "cumulative_pnl": -19.69
+        },
+        {
+          "closed_at": "2026-06-15T19:32:05.35+00:00",
+          "cumulative_pnl": 36.65
+        },
+        {
+          "closed_at": "2026-06-15T21:38:11.897+00:00",
+          "cumulative_pnl": 36.53
+        },
+        {
+          "closed_at": "2026-06-15T21:38:11.897+00:00",
+          "cumulative_pnl": 37.05
+        },
+        {
+          "closed_at": "2026-06-15T23:02:04.727+00:00",
+          "cumulative_pnl": 33.08
+        },
+        {
+          "closed_at": "2026-06-15T23:02:04.727+00:00",
+          "cumulative_pnl": 36.01
+        },
+        {
+          "closed_at": "2026-06-16T00:47:04.885+00:00",
+          "cumulative_pnl": 35.49
+        },
+        {
+          "closed_at": "2026-06-16T00:47:04.885+00:00",
+          "cumulative_pnl": 36.31
+        },
+        {
+          "closed_at": "2026-06-16T15:02:03.286+00:00",
+          "cumulative_pnl": 35.03
+        },
+        {
+          "closed_at": "2026-06-16T15:02:03.286+00:00",
+          "cumulative_pnl": 36.57
+        },
+        {
+          "closed_at": "2026-06-16T15:03:05.689+00:00",
+          "cumulative_pnl": 35.18
+        },
+        {
+          "closed_at": "2026-06-16T15:04:08.207+00:00",
+          "cumulative_pnl": 39.5
+        },
+        {
+          "closed_at": "2026-06-16T15:04:08.207+00:00",
+          "cumulative_pnl": 35.92
+        },
+        {
+          "closed_at": "2026-06-16T15:06:10.885+00:00",
+          "cumulative_pnl": 33
+        },
+        {
+          "closed_at": "2026-06-16T15:06:10.885+00:00",
+          "cumulative_pnl": 35.05
+        },
+        {
+          "closed_at": "2026-06-16T15:07:13.507+00:00",
+          "cumulative_pnl": 32.15
+        },
+        {
+          "closed_at": "2026-06-16T15:07:13.507+00:00",
+          "cumulative_pnl": 35.31
+        },
+        {
+          "closed_at": "2026-06-16T22:38:14.357+00:00",
+          "cumulative_pnl": 34.79
+        },
+        {
+          "closed_at": "2026-06-16T22:47:03.577+00:00",
+          "cumulative_pnl": 36.56
+        },
+        {
+          "closed_at": "2026-06-16T22:47:03.577+00:00",
+          "cumulative_pnl": 35.99
+        },
+        {
+          "closed_at": "2026-06-17T00:04:08.332+00:00",
+          "cumulative_pnl": 35.58
+        },
+        {
+          "closed_at": "2026-06-17T00:04:08.332+00:00",
+          "cumulative_pnl": 36.04
+        },
+        {
+          "closed_at": "2026-06-17T02:34:07.308+00:00",
+          "cumulative_pnl": 35.71
+        },
+        {
+          "closed_at": "2026-06-17T02:34:07.308+00:00",
+          "cumulative_pnl": 36.91
+        },
+        {
+          "closed_at": "2026-06-17T07:47:03.097+00:00",
+          "cumulative_pnl": 37.12
+        },
+        {
+          "closed_at": "2026-06-17T07:47:03.097+00:00",
+          "cumulative_pnl": 37.19
+        },
+        {
+          "closed_at": "2026-06-17T08:04:08.389+00:00",
+          "cumulative_pnl": 38.73
+        },
+        {
+          "closed_at": "2026-06-17T08:04:08.389+00:00",
+          "cumulative_pnl": 37.81
+        },
+        {
+          "closed_at": "2026-06-17T08:19:06.849+00:00",
+          "cumulative_pnl": 35.76
+        },
+        {
+          "closed_at": "2026-06-17T13:32:05.215+00:00",
+          "cumulative_pnl": 35.22
+        },
+        {
+          "closed_at": "2026-06-17T13:32:05.215+00:00",
+          "cumulative_pnl": 35.14
+        },
+        {
+          "closed_at": "2026-06-17T14:02:03.81+00:00",
+          "cumulative_pnl": 37.84
+        },
+        {
+          "closed_at": "2026-06-17T14:02:03.81+00:00",
+          "cumulative_pnl": 35.33
+        },
+        {
+          "closed_at": "2026-06-17T16:37:11.198+00:00",
+          "cumulative_pnl": 35.18
+        },
+        {
+          "closed_at": "2026-06-17T16:37:11.198+00:00",
+          "cumulative_pnl": 36.45
+        },
+        {
+          "closed_at": "2026-06-17T18:18:06.384+00:00",
+          "cumulative_pnl": 35.78
+        },
+        {
+          "closed_at": "2026-06-17T18:18:06.384+00:00",
+          "cumulative_pnl": 37.06
+        },
+        {
+          "closed_at": "2026-06-17T18:51:09.642+00:00",
+          "cumulative_pnl": 34.3
+        },
+        {
+          "closed_at": "2026-06-17T20:07:11.013+00:00",
+          "cumulative_pnl": 33.36
+        },
+        {
+          "closed_at": "2026-06-17T20:07:11.013+00:00",
+          "cumulative_pnl": 35.05
+        },
+        {
+          "closed_at": "2026-06-17T21:17:06.923+00:00",
+          "cumulative_pnl": 37.41
+        },
+        {
+          "closed_at": "2026-06-17T21:17:06.923+00:00",
+          "cumulative_pnl": 37.02
+        },
+        {
+          "closed_at": "2026-06-17T23:17:05.226+00:00",
+          "cumulative_pnl": 36.56
+        },
+        {
+          "closed_at": "2026-06-17T23:17:05.226+00:00",
+          "cumulative_pnl": 36.45
+        },
+        {
+          "closed_at": "2026-06-18T02:47:05.311+00:00",
+          "cumulative_pnl": 36.47
+        },
+        {
+          "closed_at": "2026-06-18T02:47:05.311+00:00",
+          "cumulative_pnl": 36.05
+        },
+        {
+          "closed_at": "2026-06-18T04:18:28.025+00:00",
+          "cumulative_pnl": 34.26
+        },
+        {
+          "closed_at": "2026-06-18T04:18:28.025+00:00",
+          "cumulative_pnl": 35.51
+        },
+        {
+          "closed_at": "2026-06-18T08:02:04.072+00:00",
+          "cumulative_pnl": 35.38
+        },
+        {
+          "closed_at": "2026-06-18T08:02:04.072+00:00",
+          "cumulative_pnl": 35.23
+        },
+        {
+          "closed_at": "2026-06-18T11:32:03.651+00:00",
+          "cumulative_pnl": 35.73
+        },
+        {
+          "closed_at": "2026-06-18T11:32:03.651+00:00",
+          "cumulative_pnl": 35.45
+        },
+        {
+          "closed_at": "2026-06-18T16:17:04.547+00:00",
+          "cumulative_pnl": 29.62
+        },
+        {
+          "closed_at": "2026-06-18T16:17:04.547+00:00",
+          "cumulative_pnl": 36.14
+        },
+        {
+          "closed_at": "2026-06-18T21:47:03.43+00:00",
+          "cumulative_pnl": 36.14
+        },
+        {
+          "closed_at": "2026-06-18T21:47:03.43+00:00",
+          "cumulative_pnl": 35.74
+        },
+        {
+          "closed_at": "2026-06-18T22:19:07.449+00:00",
+          "cumulative_pnl": 36.85
+        },
+        {
+          "closed_at": "2026-06-19T01:47:05.309+00:00",
+          "cumulative_pnl": 36.77
+        },
+        {
+          "closed_at": "2026-06-19T01:47:05.309+00:00",
+          "cumulative_pnl": 36.16
+        }
+      ]
+    },
+    {
+      "label": "Stat Arb V2B",
+      "measured_trades": 22,
+      "total_net_pnl": -2.54,
+      "mean_return_pct": -0.0578,
+      "win_rate_pct": 45.5,
+      "wins": 10,
+      "losses": 12,
+      "sharpe_per_trade": -0.0955,
+      "return_pct_stddev": 0.6054,
+      "max_drawdown_abs": 4.1,
+      "max_drawdown_pct_capital": 0.0082,
+      "peak_at_max_drawdown": 0.04,
+      "equity_curve": [
+        {
+          "closed_at": "2026-06-15T23:18:02.4+00:00",
+          "cumulative_pnl": -0.1
+        },
+        {
+          "closed_at": "2026-06-15T23:18:02.4+00:00",
+          "cumulative_pnl": 0.04
+        },
+        {
+          "closed_at": "2026-06-16T15:03:03.344+00:00",
+          "cumulative_pnl": -0.35
+        },
+        {
+          "closed_at": "2026-06-16T15:03:03.344+00:00",
+          "cumulative_pnl": -1.29
+        },
+        {
+          "closed_at": "2026-06-16T20:33:02.973+00:00",
+          "cumulative_pnl": 0.03
+        },
+        {
+          "closed_at": "2026-06-16T20:33:02.973+00:00",
+          "cumulative_pnl": -1.53
+        },
+        {
+          "closed_at": "2026-06-17T00:48:01.759+00:00",
+          "cumulative_pnl": -1.78
+        },
+        {
+          "closed_at": "2026-06-17T00:48:01.759+00:00",
+          "cumulative_pnl": -1.4
+        },
+        {
+          "closed_at": "2026-06-17T08:33:01.814+00:00",
+          "cumulative_pnl": -3.29
+        },
+        {
+          "closed_at": "2026-06-17T08:33:01.814+00:00",
+          "cumulative_pnl": -2.21
+        },
+        {
+          "closed_at": "2026-06-17T16:03:02.857+00:00",
+          "cumulative_pnl": -4.06
+        },
+        {
+          "closed_at": "2026-06-17T16:03:02.857+00:00",
+          "cumulative_pnl": -1.55
+        },
+        {
+          "closed_at": "2026-06-17T18:18:02.708+00:00",
+          "cumulative_pnl": -0.5
+        },
+        {
+          "closed_at": "2026-06-17T18:18:02.708+00:00",
+          "cumulative_pnl": -2.27
+        },
+        {
+          "closed_at": "2026-06-17T19:03:03.357+00:00",
+          "cumulative_pnl": -1.02
+        },
+        {
+          "closed_at": "2026-06-17T19:03:03.357+00:00",
+          "cumulative_pnl": -2.38
+        },
+        {
+          "closed_at": "2026-06-18T04:18:01.906+00:00",
+          "cumulative_pnl": -1.79
+        },
+        {
+          "closed_at": "2026-06-18T04:18:01.906+00:00",
+          "cumulative_pnl": -2.55
+        },
+        {
+          "closed_at": "2026-06-18T18:48:01.694+00:00",
+          "cumulative_pnl": -2.65
+        },
+        {
+          "closed_at": "2026-06-18T18:48:01.694+00:00",
+          "cumulative_pnl": -2.53
+        },
+        {
+          "closed_at": "2026-06-18T22:33:04.823+00:00",
+          "cumulative_pnl": -1.39
+        },
+        {
+          "closed_at": "2026-06-18T22:33:04.823+00:00",
+          "cumulative_pnl": -2.54
+        }
+      ]
+    },
+    {
+      "label": "Combined",
+      "measured_trades": 216,
+      "total_net_pnl": 33.61,
+      "mean_return_pct": 0.0294,
+      "win_rate_pct": 49.1,
+      "wins": 106,
+      "losses": 110,
+      "sharpe_per_trade": 0.0384,
+      "return_pct_stddev": 0.7661,
+      "max_drawdown_abs": 46.25,
+      "max_drawdown_pct_capital": 0.0925,
+      "peak_at_max_drawdown": 5.77,
+      "equity_curve": [
+        {
+          "closed_at": "2026-06-04T05:02:02.893+00:00",
+          "cumulative_pnl": 1.08
+        },
+        {
+          "closed_at": "2026-06-04T05:02:02.893+00:00",
+          "cumulative_pnl": 0
+        },
+        {
+          "closed_at": "2026-06-04T05:32:02.491+00:00",
+          "cumulative_pnl": 1.98
+        },
+        {
+          "closed_at": "2026-06-04T05:32:02.491+00:00",
+          "cumulative_pnl": 0
+        },
+        {
+          "closed_at": "2026-06-04T16:17:03.073+00:00",
+          "cumulative_pnl": -1.92
+        },
+        {
+          "closed_at": "2026-06-04T16:17:03.073+00:00",
+          "cumulative_pnl": 0
+        },
+        {
+          "closed_at": "2026-06-04T17:02:02.771+00:00",
+          "cumulative_pnl": -0.57
+        },
+        {
+          "closed_at": "2026-06-04T17:02:02.771+00:00",
+          "cumulative_pnl": 0
+        },
+        {
+          "closed_at": "2026-06-05T01:47:05.013+00:00",
+          "cumulative_pnl": 0.67
+        },
+        {
+          "closed_at": "2026-06-05T01:47:05.013+00:00",
+          "cumulative_pnl": 0
+        },
+        {
+          "closed_at": "2026-06-05T10:32:03.27+00:00",
+          "cumulative_pnl": -0.47
+        },
+        {
+          "closed_at": "2026-06-05T10:32:03.27+00:00",
+          "cumulative_pnl": 0
+        },
+        {
+          "closed_at": "2026-06-05T12:02:04.805+00:00",
+          "cumulative_pnl": 0.29
+        },
+        {
+          "closed_at": "2026-06-05T12:02:04.805+00:00",
+          "cumulative_pnl": 0
+        },
+        {
+          "closed_at": "2026-06-07T03:17:05.263+00:00",
+          "cumulative_pnl": 3.46
+        },
+        {
+          "closed_at": "2026-06-07T03:17:05.263+00:00",
+          "cumulative_pnl": 0.3
+        },
+        {
+          "closed_at": "2026-06-07T09:17:08.513+00:00",
+          "cumulative_pnl": 0.23
+        },
+        {
+          "closed_at": "2026-06-07T09:17:08.513+00:00",
+          "cumulative_pnl": 0.94
+        },
+        {
+          "closed_at": "2026-06-07T10:32:03.47+00:00",
+          "cumulative_pnl": 2.61
+        },
+        {
+          "closed_at": "2026-06-07T10:32:03.47+00:00",
+          "cumulative_pnl": 2.31
+        },
+        {
+          "closed_at": "2026-06-07T12:17:03.982+00:00",
+          "cumulative_pnl": 4.49
+        },
+        {
+          "closed_at": "2026-06-07T12:17:03.982+00:00",
+          "cumulative_pnl": 2.85
+        },
+        {
+          "closed_at": "2026-06-07T12:32:05.211+00:00",
+          "cumulative_pnl": 2.19
+        },
+        {
+          "closed_at": "2026-06-07T12:32:05.211+00:00",
+          "cumulative_pnl": 2.88
+        },
+        {
+          "closed_at": "2026-06-07T21:47:03.843+00:00",
+          "cumulative_pnl": 2.24
+        },
+        {
+          "closed_at": "2026-06-07T21:47:03.843+00:00",
+          "cumulative_pnl": 3.34
+        },
+        {
+          "closed_at": "2026-06-08T01:02:03.307+00:00",
+          "cumulative_pnl": 3.26
+        },
+        {
+          "closed_at": "2026-06-08T01:02:03.307+00:00",
+          "cumulative_pnl": 3.09
+        },
+        {
+          "closed_at": "2026-06-08T02:17:05.318+00:00",
+          "cumulative_pnl": 3.59
+        },
+        {
+          "closed_at": "2026-06-08T02:17:05.318+00:00",
+          "cumulative_pnl": 3.71
+        },
+        {
+          "closed_at": "2026-06-08T11:32:05.301+00:00",
+          "cumulative_pnl": 2.6
+        },
+        {
+          "closed_at": "2026-06-08T11:32:05.301+00:00",
+          "cumulative_pnl": 4.08
+        },
+        {
+          "closed_at": "2026-06-08T13:32:05.675+00:00",
+          "cumulative_pnl": 2.64
+        },
+        {
+          "closed_at": "2026-06-08T13:32:05.675+00:00",
+          "cumulative_pnl": 4.51
+        },
+        {
+          "closed_at": "2026-06-08T15:02:05.181+00:00",
+          "cumulative_pnl": 5.77
+        },
+        {
+          "closed_at": "2026-06-08T15:02:05.181+00:00",
+          "cumulative_pnl": 4.91
+        },
+        {
+          "closed_at": "2026-06-08T15:17:03.79+00:00",
+          "cumulative_pnl": 3.49
+        },
+        {
+          "closed_at": "2026-06-08T15:17:03.79+00:00",
+          "cumulative_pnl": 4.86
+        },
+        {
+          "closed_at": "2026-06-08T15:47:06.423+00:00",
+          "cumulative_pnl": 4.78
+        },
+        {
+          "closed_at": "2026-06-08T15:47:06.423+00:00",
+          "cumulative_pnl": 5.26
+        },
+        {
+          "closed_at": "2026-06-09T00:47:03.311+00:00",
+          "cumulative_pnl": -17.73
+        },
+        {
+          "closed_at": "2026-06-09T02:17:05.879+00:00",
+          "cumulative_pnl": -16.76
+        },
+        {
+          "closed_at": "2026-06-09T02:17:05.879+00:00",
+          "cumulative_pnl": -17.63
+        },
+        {
+          "closed_at": "2026-06-09T02:32:05.461+00:00",
+          "cumulative_pnl": -20.02
+        },
+        {
+          "closed_at": "2026-06-09T02:32:05.461+00:00",
+          "cumulative_pnl": -16.97
+        },
+        {
+          "closed_at": "2026-06-09T12:02:04.953+00:00",
+          "cumulative_pnl": -26.43
+        },
+        {
+          "closed_at": "2026-06-09T21:47:04.882+00:00",
+          "cumulative_pnl": -26.29
+        },
+        {
+          "closed_at": "2026-06-09T21:47:04.882+00:00",
+          "cumulative_pnl": -25.8
+        },
+        {
+          "closed_at": "2026-06-10T00:32:05.496+00:00",
+          "cumulative_pnl": -25.34
+        },
+        {
+          "closed_at": "2026-06-10T00:32:05.496+00:00",
+          "cumulative_pnl": -25.53
+        },
+        {
+          "closed_at": "2026-06-10T01:47:04.942+00:00",
+          "cumulative_pnl": -24.18
+        },
+        {
+          "closed_at": "2026-06-10T01:47:04.942+00:00",
+          "cumulative_pnl": -24.07
+        },
+        {
+          "closed_at": "2026-06-10T06:17:04.02+00:00",
+          "cumulative_pnl": -23.97
+        },
+        {
+          "closed_at": "2026-06-10T06:17:04.02+00:00",
+          "cumulative_pnl": -23.07
+        },
+        {
+          "closed_at": "2026-06-10T07:08:13.415+00:00",
+          "cumulative_pnl": -22.24
+        },
+        {
+          "closed_at": "2026-06-10T07:08:13.415+00:00",
+          "cumulative_pnl": -22.43
+        },
+        {
+          "closed_at": "2026-06-10T17:49:11.262+00:00",
+          "cumulative_pnl": -22.61
+        },
+        {
+          "closed_at": "2026-06-10T17:49:11.262+00:00",
+          "cumulative_pnl": -22.61
+        },
+        {
+          "closed_at": "2026-06-10T17:52:17.009+00:00",
+          "cumulative_pnl": -27.24
+        },
+        {
+          "closed_at": "2026-06-10T22:34:07.199+00:00",
+          "cumulative_pnl": -27.73
+        },
+        {
+          "closed_at": "2026-06-10T22:34:07.199+00:00",
+          "cumulative_pnl": -26.47
+        },
+        {
+          "closed_at": "2026-06-11T20:34:06.725+00:00",
+          "cumulative_pnl": -36.73
+        },
+        {
+          "closed_at": "2026-06-12T01:32:03.492+00:00",
+          "cumulative_pnl": -40.48
+        },
+        {
+          "closed_at": "2026-06-12T01:32:03.492+00:00",
+          "cumulative_pnl": -37.6
+        },
+        {
+          "closed_at": "2026-06-12T07:18:06.95+00:00",
+          "cumulative_pnl": -38.1
+        },
+        {
+          "closed_at": "2026-06-12T07:18:06.95+00:00",
+          "cumulative_pnl": -37.44
+        },
+        {
+          "closed_at": "2026-06-12T14:47:03.962+00:00",
+          "cumulative_pnl": -38.75
+        },
+        {
+          "closed_at": "2026-06-12T14:47:03.962+00:00",
+          "cumulative_pnl": -38.28
+        },
+        {
+          "closed_at": "2026-06-12T15:17:02.986+00:00",
+          "cumulative_pnl": -30.33
+        },
+        {
+          "closed_at": "2026-06-12T15:19:07.251+00:00",
+          "cumulative_pnl": -32.79
+        },
+        {
+          "closed_at": "2026-06-12T15:19:07.251+00:00",
+          "cumulative_pnl": -32.63
+        },
+        {
+          "closed_at": "2026-06-12T15:47:05.691+00:00",
+          "cumulative_pnl": -32.49
+        },
+        {
+          "closed_at": "2026-06-12T15:47:05.691+00:00",
+          "cumulative_pnl": -32.62
+        },
+        {
+          "closed_at": "2026-06-13T02:36:10.475+00:00",
+          "cumulative_pnl": -32.83
+        },
+        {
+          "closed_at": "2026-06-13T02:36:10.475+00:00",
+          "cumulative_pnl": -32.57
+        },
+        {
+          "closed_at": "2026-06-13T04:17:03.332+00:00",
+          "cumulative_pnl": -32.56
+        },
+        {
+          "closed_at": "2026-06-13T04:17:03.332+00:00",
+          "cumulative_pnl": -32.52
+        },
+        {
+          "closed_at": "2026-06-13T04:38:11.017+00:00",
+          "cumulative_pnl": -31.99
+        },
+        {
+          "closed_at": "2026-06-13T04:38:11.017+00:00",
+          "cumulative_pnl": -32.1
+        },
+        {
+          "closed_at": "2026-06-13T07:06:11.587+00:00",
+          "cumulative_pnl": -32.18
+        },
+        {
+          "closed_at": "2026-06-13T07:06:11.587+00:00",
+          "cumulative_pnl": -32.02
+        },
+        {
+          "closed_at": "2026-06-13T07:47:03.762+00:00",
+          "cumulative_pnl": -31.99
+        },
+        {
+          "closed_at": "2026-06-13T07:47:03.762+00:00",
+          "cumulative_pnl": -32.01
+        },
+        {
+          "closed_at": "2026-06-13T08:36:08.41+00:00",
+          "cumulative_pnl": -32.52
+        },
+        {
+          "closed_at": "2026-06-13T08:36:08.41+00:00",
+          "cumulative_pnl": -31.76
+        },
+        {
+          "closed_at": "2026-06-13T10:20:08.736+00:00",
+          "cumulative_pnl": -31.21
+        },
+        {
+          "closed_at": "2026-06-13T10:20:08.736+00:00",
+          "cumulative_pnl": -31.3
+        },
+        {
+          "closed_at": "2026-06-13T12:04:08.06+00:00",
+          "cumulative_pnl": -31.28
+        },
+        {
+          "closed_at": "2026-06-13T12:04:08.06+00:00",
+          "cumulative_pnl": -31.65
+        },
+        {
+          "closed_at": "2026-06-13T16:23:11.588+00:00",
+          "cumulative_pnl": -32.28
+        },
+        {
+          "closed_at": "2026-06-13T16:23:11.588+00:00",
+          "cumulative_pnl": -31.56
+        },
+        {
+          "closed_at": "2026-06-13T16:49:06.672+00:00",
+          "cumulative_pnl": -31.27
+        },
+        {
+          "closed_at": "2026-06-13T16:49:06.672+00:00",
+          "cumulative_pnl": -31.62
+        },
+        {
+          "closed_at": "2026-06-13T19:48:06.521+00:00",
+          "cumulative_pnl": -31.94
+        },
+        {
+          "closed_at": "2026-06-13T19:48:06.521+00:00",
+          "cumulative_pnl": -31.75
+        },
+        {
+          "closed_at": "2026-06-13T22:32:03.232+00:00",
+          "cumulative_pnl": -31.68
+        },
+        {
+          "closed_at": "2026-06-13T22:32:03.232+00:00",
+          "cumulative_pnl": -32.33
+        },
+        {
+          "closed_at": "2026-06-13T22:34:09.012+00:00",
+          "cumulative_pnl": -33.14
+        },
+        {
+          "closed_at": "2026-06-13T22:34:09.012+00:00",
+          "cumulative_pnl": -33.16
+        },
+        {
+          "closed_at": "2026-06-14T01:33:09.607+00:00",
+          "cumulative_pnl": -33.62
+        },
+        {
+          "closed_at": "2026-06-14T01:33:09.607+00:00",
+          "cumulative_pnl": -32.7
+        },
+        {
+          "closed_at": "2026-06-14T01:48:06.611+00:00",
+          "cumulative_pnl": -32.61
+        },
+        {
+          "closed_at": "2026-06-14T01:48:06.611+00:00",
+          "cumulative_pnl": -32.33
+        },
+        {
+          "closed_at": "2026-06-14T02:04:10.344+00:00",
+          "cumulative_pnl": -32.36
+        },
+        {
+          "closed_at": "2026-06-14T02:04:10.344+00:00",
+          "cumulative_pnl": -32.11
+        },
+        {
+          "closed_at": "2026-06-14T09:32:03.631+00:00",
+          "cumulative_pnl": -31.29
+        },
+        {
+          "closed_at": "2026-06-14T09:32:03.631+00:00",
+          "cumulative_pnl": -31.17
+        },
+        {
+          "closed_at": "2026-06-14T10:34:06.372+00:00",
+          "cumulative_pnl": -30.87
+        },
+        {
+          "closed_at": "2026-06-14T10:34:06.372+00:00",
+          "cumulative_pnl": -30.82
+        },
+        {
+          "closed_at": "2026-06-14T16:49:07.114+00:00",
+          "cumulative_pnl": -29.9
+        },
+        {
+          "closed_at": "2026-06-14T16:49:07.114+00:00",
+          "cumulative_pnl": -31.14
+        },
+        {
+          "closed_at": "2026-06-14T16:51:09.898+00:00",
+          "cumulative_pnl": -30.87
+        },
+        {
+          "closed_at": "2026-06-14T16:51:09.898+00:00",
+          "cumulative_pnl": -31.19
+        },
+        {
+          "closed_at": "2026-06-14T17:17:05.472+00:00",
+          "cumulative_pnl": -30.92
+        },
+        {
+          "closed_at": "2026-06-14T17:17:05.472+00:00",
+          "cumulative_pnl": -31.25
+        },
+        {
+          "closed_at": "2026-06-14T21:32:04.652+00:00",
+          "cumulative_pnl": -34.96
+        },
+        {
+          "closed_at": "2026-06-14T21:32:04.652+00:00",
+          "cumulative_pnl": -31.28
+        },
+        {
+          "closed_at": "2026-06-15T01:04:08.313+00:00",
+          "cumulative_pnl": -18.5
+        },
+        {
+          "closed_at": "2026-06-15T03:18:04.945+00:00",
+          "cumulative_pnl": -18.03
+        },
+        {
+          "closed_at": "2026-06-15T03:18:04.945+00:00",
+          "cumulative_pnl": -18.11
+        },
+        {
+          "closed_at": "2026-06-15T03:34:05.015+00:00",
+          "cumulative_pnl": -17.81
+        },
+        {
+          "closed_at": "2026-06-15T03:34:05.015+00:00",
+          "cumulative_pnl": -17.61
+        },
+        {
+          "closed_at": "2026-06-15T04:36:09.096+00:00",
+          "cumulative_pnl": -17.88
+        },
+        {
+          "closed_at": "2026-06-15T04:36:09.096+00:00",
+          "cumulative_pnl": -17.39
+        },
+        {
+          "closed_at": "2026-06-15T11:18:07.777+00:00",
+          "cumulative_pnl": -15.47
+        },
+        {
+          "closed_at": "2026-06-15T11:18:07.777+00:00",
+          "cumulative_pnl": -17.37
+        },
+        {
+          "closed_at": "2026-06-15T11:37:10.955+00:00",
+          "cumulative_pnl": -22.16
+        },
+        {
+          "closed_at": "2026-06-15T11:37:10.955+00:00",
+          "cumulative_pnl": -19.01
+        },
+        {
+          "closed_at": "2026-06-15T15:47:06.764+00:00",
+          "cumulative_pnl": -22.61
+        },
+        {
+          "closed_at": "2026-06-15T15:47:06.764+00:00",
+          "cumulative_pnl": -18.63
+        },
+        {
+          "closed_at": "2026-06-15T16:18:06.997+00:00",
+          "cumulative_pnl": -19.48
+        },
+        {
+          "closed_at": "2026-06-15T16:18:06.997+00:00",
+          "cumulative_pnl": -19.51
+        },
+        {
+          "closed_at": "2026-06-15T16:34:10.316+00:00",
+          "cumulative_pnl": -19.68
+        },
+        {
+          "closed_at": "2026-06-15T16:34:10.316+00:00",
+          "cumulative_pnl": -19.43
+        },
+        {
+          "closed_at": "2026-06-15T18:32:04.823+00:00",
+          "cumulative_pnl": -19.72
+        },
+        {
+          "closed_at": "2026-06-15T18:32:04.823+00:00",
+          "cumulative_pnl": -19.69
+        },
+        {
+          "closed_at": "2026-06-15T19:32:05.35+00:00",
+          "cumulative_pnl": 36.65
+        },
+        {
+          "closed_at": "2026-06-15T21:38:11.897+00:00",
+          "cumulative_pnl": 36.53
+        },
+        {
+          "closed_at": "2026-06-15T21:38:11.897+00:00",
+          "cumulative_pnl": 37.05
+        },
+        {
+          "closed_at": "2026-06-15T23:02:04.727+00:00",
+          "cumulative_pnl": 33.08
+        },
+        {
+          "closed_at": "2026-06-15T23:02:04.727+00:00",
+          "cumulative_pnl": 36.01
+        },
+        {
+          "closed_at": "2026-06-15T23:18:02.4+00:00",
+          "cumulative_pnl": 35.92
+        },
+        {
+          "closed_at": "2026-06-15T23:18:02.4+00:00",
+          "cumulative_pnl": 36.06
+        },
+        {
+          "closed_at": "2026-06-16T00:47:04.885+00:00",
+          "cumulative_pnl": 35.53
+        },
+        {
+          "closed_at": "2026-06-16T00:47:04.885+00:00",
+          "cumulative_pnl": 36.35
+        },
+        {
+          "closed_at": "2026-06-16T15:02:03.286+00:00",
+          "cumulative_pnl": 35.07
+        },
+        {
+          "closed_at": "2026-06-16T15:02:03.286+00:00",
+          "cumulative_pnl": 36.61
+        },
+        {
+          "closed_at": "2026-06-16T15:03:03.344+00:00",
+          "cumulative_pnl": 36.23
+        },
+        {
+          "closed_at": "2026-06-16T15:03:03.344+00:00",
+          "cumulative_pnl": 35.29
+        },
+        {
+          "closed_at": "2026-06-16T15:03:05.689+00:00",
+          "cumulative_pnl": 33.89
+        },
+        {
+          "closed_at": "2026-06-16T15:04:08.207+00:00",
+          "cumulative_pnl": 38.22
+        },
+        {
+          "closed_at": "2026-06-16T15:04:08.207+00:00",
+          "cumulative_pnl": 34.64
+        },
+        {
+          "closed_at": "2026-06-16T15:06:10.885+00:00",
+          "cumulative_pnl": 31.72
+        },
+        {
+          "closed_at": "2026-06-16T15:06:10.885+00:00",
+          "cumulative_pnl": 33.76
+        },
+        {
+          "closed_at": "2026-06-16T15:07:13.507+00:00",
+          "cumulative_pnl": 30.86
+        },
+        {
+          "closed_at": "2026-06-16T15:07:13.507+00:00",
+          "cumulative_pnl": 34.03
+        },
+        {
+          "closed_at": "2026-06-16T20:33:02.973+00:00",
+          "cumulative_pnl": 35.34
+        },
+        {
+          "closed_at": "2026-06-16T20:33:02.973+00:00",
+          "cumulative_pnl": 33.78
+        },
+        {
+          "closed_at": "2026-06-16T22:38:14.357+00:00",
+          "cumulative_pnl": 33.26
+        },
+        {
+          "closed_at": "2026-06-16T22:47:03.577+00:00",
+          "cumulative_pnl": 35.03
+        },
+        {
+          "closed_at": "2026-06-16T22:47:03.577+00:00",
+          "cumulative_pnl": 34.46
+        },
+        {
+          "closed_at": "2026-06-17T00:04:08.332+00:00",
+          "cumulative_pnl": 34.05
+        },
+        {
+          "closed_at": "2026-06-17T00:04:08.332+00:00",
+          "cumulative_pnl": 34.51
+        },
+        {
+          "closed_at": "2026-06-17T00:48:01.759+00:00",
+          "cumulative_pnl": 34.26
+        },
+        {
+          "closed_at": "2026-06-17T00:48:01.759+00:00",
+          "cumulative_pnl": 34.64
+        },
+        {
+          "closed_at": "2026-06-17T02:34:07.308+00:00",
+          "cumulative_pnl": 34.3
+        },
+        {
+          "closed_at": "2026-06-17T02:34:07.308+00:00",
+          "cumulative_pnl": 35.5
+        },
+        {
+          "closed_at": "2026-06-17T07:47:03.097+00:00",
+          "cumulative_pnl": 35.72
+        },
+        {
+          "closed_at": "2026-06-17T07:47:03.097+00:00",
+          "cumulative_pnl": 35.78
+        },
+        {
+          "closed_at": "2026-06-17T08:04:08.389+00:00",
+          "cumulative_pnl": 37.32
+        },
+        {
+          "closed_at": "2026-06-17T08:04:08.389+00:00",
+          "cumulative_pnl": 36.4
+        },
+        {
+          "closed_at": "2026-06-17T08:19:06.849+00:00",
+          "cumulative_pnl": 34.36
+        },
+        {
+          "closed_at": "2026-06-17T08:33:01.814+00:00",
+          "cumulative_pnl": 32.47
+        },
+        {
+          "closed_at": "2026-06-17T08:33:01.814+00:00",
+          "cumulative_pnl": 33.55
+        },
+        {
+          "closed_at": "2026-06-17T13:32:05.215+00:00",
+          "cumulative_pnl": 33
+        },
+        {
+          "closed_at": "2026-06-17T13:32:05.215+00:00",
+          "cumulative_pnl": 32.92
+        },
+        {
+          "closed_at": "2026-06-17T14:02:03.81+00:00",
+          "cumulative_pnl": 35.62
+        },
+        {
+          "closed_at": "2026-06-17T14:02:03.81+00:00",
+          "cumulative_pnl": 33.12
+        },
+        {
+          "closed_at": "2026-06-17T16:03:02.857+00:00",
+          "cumulative_pnl": 31.27
+        },
+        {
+          "closed_at": "2026-06-17T16:03:02.857+00:00",
+          "cumulative_pnl": 33.78
+        },
+        {
+          "closed_at": "2026-06-17T16:37:11.198+00:00",
+          "cumulative_pnl": 33.63
+        },
+        {
+          "closed_at": "2026-06-17T16:37:11.198+00:00",
+          "cumulative_pnl": 34.9
+        },
+        {
+          "closed_at": "2026-06-17T18:18:02.708+00:00",
+          "cumulative_pnl": 35.95
+        },
+        {
+          "closed_at": "2026-06-17T18:18:02.708+00:00",
+          "cumulative_pnl": 34.18
+        },
+        {
+          "closed_at": "2026-06-17T18:18:06.384+00:00",
+          "cumulative_pnl": 33.51
+        },
+        {
+          "closed_at": "2026-06-17T18:18:06.384+00:00",
+          "cumulative_pnl": 34.78
+        },
+        {
+          "closed_at": "2026-06-17T18:51:09.642+00:00",
+          "cumulative_pnl": 32.03
+        },
+        {
+          "closed_at": "2026-06-17T19:03:03.357+00:00",
+          "cumulative_pnl": 33.28
+        },
+        {
+          "closed_at": "2026-06-17T19:03:03.357+00:00",
+          "cumulative_pnl": 31.93
+        },
+        {
+          "closed_at": "2026-06-17T20:07:11.013+00:00",
+          "cumulative_pnl": 30.99
+        },
+        {
+          "closed_at": "2026-06-17T20:07:11.013+00:00",
+          "cumulative_pnl": 32.67
+        },
+        {
+          "closed_at": "2026-06-17T21:17:06.923+00:00",
+          "cumulative_pnl": 35.04
+        },
+        {
+          "closed_at": "2026-06-17T21:17:06.923+00:00",
+          "cumulative_pnl": 34.65
+        },
+        {
+          "closed_at": "2026-06-17T23:17:05.226+00:00",
+          "cumulative_pnl": 34.18
+        },
+        {
+          "closed_at": "2026-06-17T23:17:05.226+00:00",
+          "cumulative_pnl": 34.08
+        },
+        {
+          "closed_at": "2026-06-18T02:47:05.311+00:00",
+          "cumulative_pnl": 34.09
+        },
+        {
+          "closed_at": "2026-06-18T02:47:05.311+00:00",
+          "cumulative_pnl": 33.67
+        },
+        {
+          "closed_at": "2026-06-18T04:18:01.906+00:00",
+          "cumulative_pnl": 34.25
+        },
+        {
+          "closed_at": "2026-06-18T04:18:01.906+00:00",
+          "cumulative_pnl": 33.5
+        },
+        {
+          "closed_at": "2026-06-18T04:18:28.025+00:00",
+          "cumulative_pnl": 31.71
+        },
+        {
+          "closed_at": "2026-06-18T04:18:28.025+00:00",
+          "cumulative_pnl": 32.97
+        },
+        {
+          "closed_at": "2026-06-18T08:02:04.072+00:00",
+          "cumulative_pnl": 32.83
+        },
+        {
+          "closed_at": "2026-06-18T08:02:04.072+00:00",
+          "cumulative_pnl": 32.68
+        },
+        {
+          "closed_at": "2026-06-18T11:32:03.651+00:00",
+          "cumulative_pnl": 33.18
+        },
+        {
+          "closed_at": "2026-06-18T11:32:03.651+00:00",
+          "cumulative_pnl": 32.9
+        },
+        {
+          "closed_at": "2026-06-18T16:17:04.547+00:00",
+          "cumulative_pnl": 27.07
+        },
+        {
+          "closed_at": "2026-06-18T16:17:04.547+00:00",
+          "cumulative_pnl": 33.59
+        },
+        {
+          "closed_at": "2026-06-18T18:48:01.694+00:00",
+          "cumulative_pnl": 33.49
+        },
+        {
+          "closed_at": "2026-06-18T18:48:01.694+00:00",
+          "cumulative_pnl": 33.61
+        },
+        {
+          "closed_at": "2026-06-18T21:47:03.43+00:00",
+          "cumulative_pnl": 33.61
+        },
+        {
+          "closed_at": "2026-06-18T21:47:03.43+00:00",
+          "cumulative_pnl": 33.22
+        },
+        {
+          "closed_at": "2026-06-18T22:19:07.449+00:00",
+          "cumulative_pnl": 34.33
+        },
+        {
+          "closed_at": "2026-06-18T22:33:04.823+00:00",
+          "cumulative_pnl": 35.46
+        },
+        {
+          "closed_at": "2026-06-18T22:33:04.823+00:00",
+          "cumulative_pnl": 34.31
+        },
+        {
+          "closed_at": "2026-06-19T01:47:05.309+00:00",
+          "cumulative_pnl": 34.22
+        },
+        {
+          "closed_at": "2026-06-19T01:47:05.309+00:00",
+          "cumulative_pnl": 33.61
+        }
+      ]
+    }
+  ]
+}

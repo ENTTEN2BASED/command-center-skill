@@ -1,6 +1,19 @@
-# Paper Trading Results — as of June 6 2026
+# Paper Trading Results
 
-**Period:** 2026-05-20 → present (paper mode)
+> ## HISTORICAL — System-Wide Snapshot as of June 6 2026 (superseded)
+>
+> **The headline figures in this section (87 trades / -$2,213 CAD / 4.4% drawdown)
+> are historical, whole-system numbers as of June 6 2026 — NOT the stat-arb
+> strategy being submitted.** That system-wide loss was dominated by the
+> now-retired **DeFi Rotation V1** (-$1,730 CAD, 78% of all losses, 15.4% WR),
+> which has since been suspended. For the submitted strategy's standalone,
+> measured track record (194 trades, 49.5% WR, +$36.16 PnL, 0.09%-of-capital
+> max drawdown), see `results/stat-arb-metrics.md` and the repo README.
+> The section below is retained for transparency and historical context only.
+
+## Historical System-Wide Context (June 6 2026)
+
+**Period:** 2026-05-20 → June 6 2026 (paper mode)
 **System:** Command Center v4.25
 **Capital:** $47,587 CAD available ($50,000 CAD starting)
 **Mode:** Fully autonomous paper trading
@@ -71,7 +84,10 @@
       (CMC diverges: bear_trending)
     - BTC dominance 58.3%, -17% 7d
   - Token safety gate: LIVE
-    - Blocks honeypots before watchlist entry
+    - CMC token-safety runs in two scheduled jobs:
+      Token Scout drops unsafe new-token candidates at
+      discovery, and a daily safety sweep auto-blacklists
+      unsafe active pools. Fails open on unknown.
 - DeFi Rotation V2: redesigned and live
   - New entry: 6-condition gate
   - New exit: 8% take-profit, 4% trailing stop
