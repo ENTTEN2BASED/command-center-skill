@@ -41,6 +41,12 @@ Honest framing:
 - V1 cross-venue results are tiny/snapshot-based — relegated, not headlined.
 - V2B perp is out of replay scope but shares the identical risk-off signal.
 
+### Quickstart — reproduce the CMC gate
+```bash
+cd backtest && npm install && npm run backtest
+```
+Runs the gate-OFF vs gate-ON comparison above on bundled public Binance candles — fully offline, no secrets, no database. Reproduces the published V2A figures (60 → 42 trades, -$206.45 → -$145.13 PnL, 0.42% → 0.29% max drawdown) within rounding. This is a self-contained slice of the system — only the stat-arb strategy and the CMC gate; the learning loop and live execution engine are not included. See [backtest/README.md](backtest/README.md).
+
 ## What CMC actually does here (four real roles)
 1. Regime risk-off entry gate — bear_trending pauses new stat-arb entries (the decision-path use above).
 2. Live token-safety gating — CMC token-safety (honeypot, security score, LP-lock, holder-count signals) runs in two scheduled jobs: Token Scout drops unsafe new-token candidates at discovery, and a daily safety sweep auto-blacklists unsafe active pools. Fails open on unknown.

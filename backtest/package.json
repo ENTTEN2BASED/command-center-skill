@@ -1,0 +1,15 @@
+{
+  "name": "stat-arb-cmc-gate-backtest",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Self-contained reproduction of the CMC risk-off gate on the V2A long-only stat-arb strategy over the May–Jun 2026 crash window. Offline, no secrets.",
+  "scripts": {
+    "backtest": "tsx src/backtest.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
+  }
+}
