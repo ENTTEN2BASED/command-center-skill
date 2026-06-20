@@ -1,0 +1,9 @@
+{
+  "name": "command-center-skill",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Market-Neutral Stat-Arb Strategy Skill — offline reproducible backtest (see backtest/).",
+  "scripts": {
+    "backtest": "npm --prefix backtest install && npm --prefix backtest run backtest"
+  }
+}

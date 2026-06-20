@@ -18,13 +18,13 @@ Live paper — Stat Arb (full period, measured-only, through 2026-06-19):
 CMC gate — crash window (May 26-Jun 10, BTC ~ -19%, V2A long-only):
 | | gate OFF | gate ON |
 |---|---|---|
-| Trades | 60 | 42 (18 paused, incl. the -$42 single largest loss) |
-| Total PnL | -$206.45 | -$145.13 (~30% less loss) |
-| Max drawdown | 0.42% cap | 0.29% cap (~30% less) |
+| Trades | 46 | 29 (17 paused, incl. the -$61.99 single largest loss) |
+| Total PnL | -$185.95 | -$99.51 (~46% less loss) |
+| Max drawdown | 0.393% cap | 0.216% cap (~45% less) |
 
 We state the caveats plainly:
 - Loss reduction, not profit — long-only loses in a crash; the gate limits damage.
-- Per-trade Sharpe is slightly worse under the gate (-0.30 -> -0.51): the gate cuts exposure, it doesn't improve per-trade quality in a falling tape.
+- Per-trade Sharpe is slightly worse under the gate (-0.2783 -> -0.4318): the gate cuts exposure, it doesn't improve per-trade quality in a falling tape.
 - The 49.5% live win rate (full period) and the worst-case crash backtest are distinct contexts, presented as such.
 - CMC history is reconstructed from real BTC 7d trend using the live signal's exact thresholds, because CMC historical data is paywalled.
 - V1 cross-venue is tiny/snapshot-based (relegated); V2B perp is out of replay scope but uses the identical risk-off signal.

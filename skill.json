@@ -1,0 +1,97 @@
+{
+  "metadata": {
+    "name": "market-neutral-stat-arb-cmc-gate",
+    "version": "1.0.0",
+    "track": "Track 2 — Strategy Skills",
+    "description": "BTC/ETH lead-lag statistical arbitrage with a CoinMarketCap risk-off entry gate. Deterministic z-score rules; market-neutral capital preservation with sub-0.1%-of-capital live drawdown.",
+    "authored_as": "LLM Skill"
+  },
+  "strategy": {
+    "type": "market-neutral statistical arbitrage (BTC/ETH lead-lag)",
+    "variant": "V2A — Base chain, spot long-only",
+    "signal": {
+      "definition": "rolling z-score of log(BTC/ETH) price ratio",
+      "window_bars": 48,
+      "candle_interval": "5m"
+    },
+    "rules": {
+      "entry": "z < -2.0  (ETH cheap vs BTC relative to recent ratio)",
+      "exit": "z >= 0.0  (mean reversion complete)",
+      "stop": "z <= -4.0  (adverse divergence / correlation breaking)",
+      "time_stop_hours": 72,
+      "position_size_usd": 1000,
+      "position_size_currency": "CAD",
+      "cost_basis": "live paper PnL is gross (no gas/slippage); the bundled backtest applies 0.3% round-trip per leg"
+    },
+    "param_source": "live stat_arb_pairs DB row BTC_ETH_LEAD_LAG_BASE (authoritative — drove the live paper trades)"
+  },
+  "cmc_gate": {
+    "purpose": "risk-off entry gate",
+    "rule": "on CMC bear_trending (risk-off), pause NEW entries; exits always run (entry-only)",
+    "source": "CoinMarketCap market-regime signal (live deriveRegimeFromRestData + cmcRegimeIsRiskOff mapping; risk-off <=> bear_trending)",
+    "reconstructed_history_note": "CMC historical regime is paywalled. For the backtest, the per-bar verdict is RECONSTRUCTED from the real BTC 7-day trend (Binance OHLCV) using the live threshold cut-points (-10% -> bear_trending, +5% -> bull_trending); btc_dominance approximated >55, total_market_cap_change unavailable."
+  },
+  "risk_limits": {
+    "denominator": "starting capital (50,000 CAD)",
+    "drawdown_reduce_sizes_pct": 15,
+    "drawdown_halt_entries_pct": 25,
+    "drawdown_full_stop_pct": 45,
+    "accounting": "measured-only — pricing-fallback (unmeasured) closes excluded from all metrics"
+  },
+  "backtest_metrics": {
+    "window": "2026-05-26 to 2026-06-10",
+    "market_context": "BTC ~ -19% (crash window)",
+    "scope": "V2A long-only, single pair BTC_ETH_LEAD_LAG_BASE",
+    "gate_off": {
+      "trades": 46,
+      "win_rate_pct": 26.1,
+      "total_pnl": -185.95,
+      "max_drawdown_abs": -196.59,
+      "max_drawdown_pct_capital": 0.393,
+      "sharpe_per_trade": -0.2783
+    },
+    "gate_on": {
+      "trades": 29,
+      "win_rate_pct": 24.1,
+      "total_pnl": -99.51,
+      "max_drawdown_abs": -107.81,
+      "max_drawdown_pct_capital": 0.216,
+      "sharpe_per_trade": -0.4318
+    },
+    "gate_effect": "loss reduced ~46% (-$185.95 -> -$99.51); max drawdown reduced ~45% (0.393% -> 0.216% of capital); 17 entries paused incl. the single largest loss -$61.99 (entry 2026-06-03 21:40Z); per-trade Sharpe falls (-0.2783 -> -0.4318) — the gate cuts exposure, not per-trade quality"
+  },
+  "live_track_record": {
+    "as_of": "2026-06-19",
+    "source": "paper_positions (status=Closed), Stat Arb measured column, measured-only",
+    "trades": 194,
+    "win_rate_pct": 49.5,
+    "total_pnl": 36.16,
+    "currency": "CAD",
+    "mean_return_per_trade_pct": 0.039,
+    "sharpe_per_trade": 0.05,
+    "sharpe_note": "per-trade, NOT annualized",
+    "max_drawdown_abs": -46.25,
+    "max_drawdown_pct_capital": 0.09
+  },
+  "disclosures": {
+    "loss_reduction_not_profit": "the CMC gate reduces loss and drawdown in the crash window; it does not turn the strategy profitable in that window",
+    "reconstructed_cmc_history": "backtest CMC regime is reconstructed from real BTC 7d trend, not real CMC historical data (paywalled)",
+    "near_breakeven_market_neutral": "live record is near-breakeven by design — market-neutral capital preservation, not alpha generation",
+    "slice_only": "this is a self-contained slice; the learning loop and live execution engine are NOT included"
+  },
+  "sponsor_stacks": {
+    "coinmarketcap": "market-regime risk-off gate + live token-safety gating + regime confidence modifier + performance benchmark",
+    "trust_wallet_agent_kit": "self-custody signing (TWAK)",
+    "bnb_chain_aster": "Aster perp venue for the delta-neutral V2B variant"
+  },
+  "reproduce": {
+    "command": "cd backtest && npm install && npm run backtest",
+    "offline": true,
+    "results_files": [
+      "results/stat-arb-gate-comparison.md",
+      "results/stat-arb-gate-comparison.json",
+      "results/stat-arb-metrics.md",
+      "results/stat-arb-metrics.json"
+    ]
+  }
+}

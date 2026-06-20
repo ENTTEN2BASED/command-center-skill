@@ -8,7 +8,7 @@
 // Logic ported faithfully from the live system (see each module header for source).
 //
 // This reproduces the published headline: pausing long entries while CMC reads
-// bear_trending cuts both total loss and max drawdown by ~30% across the crash.
+// bear_trending cuts total loss by ~46% and max drawdown by ~45% across the crash.
 
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -171,7 +171,7 @@ function main(): void {
   console.log("=== Stat-Arb CMC risk-off gate — crash-window reproduction ===");
   console.log("Pair: BTC_ETH_LEAD_LAG_BASE (V2A long-only) | spread = log(BTC/ETH)");
   console.log(
-    `Config (SA_BASELINE): z_entry=${Z_ENTRY} z_exit=${Z_EXIT} z_stop=${Z_STOP} ` +
+    `Config (live authoritative): z_entry=${Z_ENTRY.toFixed(1)} z_exit=${Z_EXIT.toFixed(1)} z_stop=${Z_STOP.toFixed(1)} ` +
       `window=${CANDLE_WINDOW} max_hold=${MAX_HOLD_HOURS}h size=$${POSITION_SIZE}/trade cost=0.3%/leg`,
   );
 

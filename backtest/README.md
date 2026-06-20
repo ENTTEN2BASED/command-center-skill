@@ -1,8 +1,8 @@
 # Stat-Arb CMC Risk-Off Gate — Crash-Window Backtest
 
 A **self-contained, runnable** reproduction of the headline result: wiring CoinMarketCap's
-risk-off regime signal into the stat-arb strategy as an **entry gate** cuts both total loss
-and max drawdown by **~30%** across the May–June 2026 crash (BTC ≈ −19%).
+risk-off regime signal into the stat-arb strategy as an **entry gate** cuts total loss by
+**~46%** and max drawdown by **~45%** across the May–June 2026 crash (BTC ≈ −19%).
 
 This is a deliberately narrow slice of the Command Center system — **only** the V2A
 long-only BTC/ETH lead-lag strategy and the CMC gate. The learning loop, orchestration,
@@ -25,18 +25,18 @@ zero database**. Only dev dependencies are `tsx` + `typescript` (to run the Type
 === V2A long-only — gate-OFF vs gate-ON (crash window 2026-05-26 → 2026-06-10) ===
 Metric                        gate-OFF         gate-ON    Δ (on − off)
 ----------------------------------------------------------------------
-Trades                              60              42             -18
-Win rate                        25.0%           26.2%          +1.2pp
-Total PnL                    -$206.45        -$145.13         +61.32
-Max DD ($)                   -$207.79        -$146.47         +61.32
-Max DD (% capital)           0.4156%         0.2929%       -0.1227pp
-Sharpe (per-trade)           -0.3008         -0.5072         -0.2064
+Trades                              46              29             -17
+Win rate                         26.1%           24.1%          -2.0pp
+Total PnL                    -$185.95         -$99.51         +86.44
+Max DD ($)                   -$196.59        -$107.81         +88.78
+Max DD (% capital)           0.3932%         0.2156%       -0.1776pp
+Sharpe (per-trade)           -0.2783         -0.4318         -0.1535
 
 --- Gate effect ---
-Entries paused by the gate: 18 (gate-OFF 60 → gate-ON 42)
-Gate-OFF's single largest loss: -$42.28 (entry 2026-...) — PAUSED by gate ✓
-Total loss cut by the gate:  30% (-$206.45 → -$145.13)
-Max drawdown cut by the gate: 30% (-$207.79 → -$146.47)
+Entries paused by the gate: 17 (gate-OFF 46 → gate-ON 29)
+Gate-OFF's single largest loss: -$61.99 (entry 2026-...) — PAUSED by gate ✓
+Total loss cut by the gate:  46% (-$185.95 → -$99.51)
+Max drawdown cut by the gate: 45% (-$196.59 → -$107.81)
 ```
 
 (Exact wording around timestamps may differ slightly; the metric values reproduce
@@ -47,15 +47,16 @@ the published figures within rounding.)
 The pair is `BTC_ETH_LEAD_LAG_BASE` (V2A long-only). The spread is `log(BTC/ETH)`.
 
 - **Entry:** z-score `< −2.0` → go long the lagging leg (ETH cheap vs BTC), expecting reversion.
-- **Exit:** z `≥ −0.5` → reverted; z `≤ −3.5` → stop-loss; age `≥ 72h` → time-stop.
-- **Config (`SA_BASELINE`):** z_entry 2.0, z_exit 0.5, z_stop 3.5, 48-bar window, $1,000/trade,
-  0.3% round-trip cost per leg applied once on close.
+- **Exit:** z `≥ 0.0` → reverted; z `≤ −4.0` → stop-loss; age `≥ 72h` → time-stop.
+- **Config (live authoritative):** z_entry 2.0, z_exit 0.0, z_stop 4.0, 48-bar window, $1,000/trade,
+  0.3% round-trip cost per leg applied once on close. These are the exact thresholds that drove
+  the live paper trades (`stat_arb_pairs` BTC_ETH_LEAD_LAG_BASE).
 - **The CMC gate (the point of the demo):** on bars where CMC reads `bear_trending` (risk-off),
   **new entries pause**; exits always run (entry-only gate). In a one-directional long strategy,
   pausing entries during a bear is exactly where drawdown is avoided.
 
 In a crash, a long-only strategy loses; the gate's job is to lose **less**. That's what the
-~30% reduction in both loss and drawdown shows — capital preservation, not profit.
+~46% loss reduction and ~45% drawdown reduction show — capital preservation, not profit.
 
 ## Files
 

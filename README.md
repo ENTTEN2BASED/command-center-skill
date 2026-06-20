@@ -7,7 +7,7 @@ A market-neutral statistical-arbitrage Strategy Skill (BTC/ETH lead-lag), valida
 ## Headline — risk control first
 - Market-neutral, extremely low drawdown. Live paper stat-arb: 194 measured trades, max drawdown $46.25 = 0.09% of capital across a bear/ranging market.
 - Near-breakeven by design. +$36.16 total PnL, mean +0.039%/trade, 49.5% win rate, per-trade Sharpe 0.05 — a capital-preservation engine, not a return engine.
-- CMC regime signal in the decision path. On CMC bear_trending (risk-off), new entries pause; exits always run. In a crash-window backtest this cut both total loss and max drawdown by ~30%.
+- CMC regime signal in the decision path. On CMC bear_trending (risk-off), new entries pause; exits always run. In a crash-window backtest this cut total loss by ~46% and max drawdown by ~45%.
 
 ## Live paper track record — Stat Arb (measured, full period)
 Source: paper_positions (status = Closed), measured-only — pricing-fallback "unmeasured" closes are excluded from every metric. Generated 2026-06-19.
@@ -29,10 +29,10 @@ CMC's market-regime signal is promoted from advisory to a real entry gate on the
 ### Crash-window backtest (May 26 – Jun 10, BTC ~ -19%), V2A long-only
 | Metric | gate OFF | gate ON | Effect |
 |---|---|---|---|
-| Trades | 60 | 42 | 18 long entries paused (incl. the single largest loss, -$42) |
-| Total PnL | -$206.45 | -$145.13 | loss cut ~30% |
-| Max drawdown | -$207.79 (0.42% cap) | -$146.47 (0.29% cap) | ~30% less |
-| Per-trade Sharpe | -0.30 | -0.51 | slightly worse (gate cuts exposure, not per-trade quality) |
+| Trades | 46 | 29 | 17 long entries paused (incl. the single largest loss, -$61.99) |
+| Total PnL | -$185.95 | -$99.51 | loss cut ~46% |
+| Max drawdown | -$196.59 (0.393% cap) | -$107.81 (0.216% cap) | ~45% less |
+| Per-trade Sharpe | -0.2783 | -0.4318 | slightly worse (gate cuts exposure, not per-trade quality) |
 
 Honest framing:
 - This is loss reduction, not profit — a long-only strategy loses in a crash; the gate reduces the damage.
@@ -43,9 +43,13 @@ Honest framing:
 
 ### Quickstart — reproduce the CMC gate
 ```bash
-cd backtest && npm install && npm run backtest
+git clone <repo-url>
+cd command-center-skill
+npm run backtest
 ```
-Runs the gate-OFF vs gate-ON comparison above on bundled public Binance candles — fully offline, no secrets, no database. Reproduces the published V2A figures (60 → 42 trades, -$206.45 → -$145.13 PnL, 0.42% → 0.29% max drawdown) within rounding. This is a self-contained slice of the system — only the stat-arb strategy and the CMC gate; the learning loop and live execution engine are not included. See [backtest/README.md](backtest/README.md).
+(Or run it directly from the backtest dir: `cd backtest && npm install && npm run backtest`.)
+
+Runs the gate-OFF vs gate-ON comparison above on bundled public Binance candles — fully offline, no secrets, no database. Reproduces the published V2A figures (46 → 29 trades, -$185.95 → -$99.51 PnL, 0.393% → 0.216% max drawdown) within rounding. This is a self-contained slice of the system — only the stat-arb strategy and the CMC gate; the learning loop and live execution engine are not included. See [backtest/README.md](backtest/README.md).
 
 ## What CMC actually does here (four real roles)
 1. Regime risk-off entry gate — bear_trending pauses new stat-arb entries (the decision-path use above).

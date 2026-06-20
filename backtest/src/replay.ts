@@ -9,8 +9,9 @@
 //   stop   : z ≤ −Z_STOP             → stop_loss (correlation breaking)
 //   time   : age ≥ MAX_HOLD_HOURS    → time_stop
 //
-// Config = SA_BASELINE resolved for this pair (src/lib/overdrive/sweep.ts):
-//   z_entry 2.0, z_exit 0.5, z_stop 3.5, max_hold 72h, size $1000/trade,
+// Config = the live authoritative V2A params (stat_arb_pairs BTC_ETH_LEAD_LAG_BASE —
+// the exact thresholds that drove the live paper trades):
+//   z_entry 2.0, z_exit 0.0, z_stop 4.0, max_hold 72h, size $1000/trade,
 //   round-trip cost 0.3% per leg applied once on close.
 
 import { computeZScore, type SpreadDataPoint } from "./zscore.js";
@@ -19,8 +20,8 @@ import type { Candle } from "./csv.js";
 
 export const CANDLE_WINDOW = 48;
 export const Z_ENTRY = 2.0;
-export const Z_EXIT = 0.5;
-export const Z_STOP = 3.5;
+export const Z_EXIT = 0.0;
+export const Z_STOP = 4.0;
 export const MAX_HOLD_HOURS = 72;
 export const POSITION_SIZE = 1000;
 export const ROUND_TRIP_COST_PER_LEG = 0.003;
